@@ -37,11 +37,11 @@ public:
 private:
 
 };
-class Generator
+class Zaklucenia
 {
 public:
-	Generator() {}
-	~Generator() {}
+	Zaklucenia() {}
+	~Zaklucenia() {}
 
 private:
 
@@ -51,4 +51,5 @@ private:
 int main()
 {
 	cout << "siema";
+	
 }
