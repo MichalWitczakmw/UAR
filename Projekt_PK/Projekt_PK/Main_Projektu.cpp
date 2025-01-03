@@ -10,18 +10,23 @@ public:
 	{
 		for (int i = 0; i < wartoscZadana.size() ; i++)
 		{
-			if (i > aktywacja)
+			if (terazniejszyCzasZegara > aktywacja)
 				wartoscZadana.push(wartoscStala);
+			else
+				wartoscZadana.push(0.0);
+			tik();
 		}
+		return wartoscZadana;
 	}
 
-	queue<double> Sinusoidalnie(int aktywacja, double wartoscStala)
+	queue<double> Sinusoidalnie( double wartoscStala)
 	{
 
 		for (int i = 0; i < wartoscZadana.size(); i++)
 		{
-			wartoscZadana.push(sin((i % aktywacja) * 2 * m_PI / aktywacja));
+			wartoscZadana.push(sin((i % (int)(2*m_PI)/ (2 * m_PI))));
 		}
+		return wartoscZadana;
 	}
 
 	queue<double> SygnalProstokatny(int aktywacja, double wartoscStala)
@@ -31,11 +36,19 @@ public:
 		{
 			wartoscZadana.push(sin((i % aktywacja) * 2 * m_PI / aktywacja));
 		}
+		return wartoscZadana;
 	}
 
 private:
 	queue<double> wartoscZadana = {};
 	const double m_PI = 3.14;
+	int terazniejszyCzasZegara = 0;
+
+	void tik()
+	{
+		this_thread::sleep_for(chrono::seconds(1));
+		terazniejszyCzasZegara++;
+	}
 };
 
 class Sprzerzenie
