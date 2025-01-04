@@ -7,8 +7,16 @@
       "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Main_Projektu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Testy_UAR.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Main_Projektu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Testy_UAR.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,19 +26,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Testy_UAR.cpp",
+              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.cpp",
+              "RelativeDocumentMoniker": "Projekt_PK\\Testy_UAR.cpp",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.cpp",
+              "RelativeToolTip": "Projekt_PK\\Testy_UAR.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-04T20:08:47.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Testy_UAR.h",
+              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.h",
+              "RelativeDocumentMoniker": "Projekt_PK\\Testy_UAR.h",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.h",
+              "RelativeToolTip": "Projekt_PK\\Testy_UAR.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-04T20:08:38.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Main_Projektu.h",
               "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.h",
               "RelativeDocumentMoniker": "Projekt_PK\\Main_Projektu.h",
               "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.h",
               "RelativeToolTip": "Projekt_PK\\Main_Projektu.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-30T19:23:19.903Z"
+              "WhenOpened": "2024-12-30T19:23:19.903Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -40,7 +75,7 @@
               "RelativeDocumentMoniker": "Projekt_PK\\Main_Projektu.cpp",
               "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.cpp*",
               "RelativeToolTip": "Projekt_PK\\Main_Projektu.cpp*",
-              "ViewState": "AgIAAFEAAAAAAAAAAADwv2AAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAAMMAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-30T19:22:33.599Z",
               "EditorCaption": ""

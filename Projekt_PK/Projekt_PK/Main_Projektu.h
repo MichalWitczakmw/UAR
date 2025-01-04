@@ -11,5 +11,11 @@
 #include <thread>
 #include <chrono>
 #include <queue>
+#include <limits>
 
 using namespace std;
+
+#define MAINPROJEKTU
+
+// MAINPROJEKTU  main odpala g³ówny program
+// TESTYUAR odpala testy przeznaczoego do tego uk³adu
