@@ -7,16 +7,40 @@
       "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Main_Projektu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Testy_UAR.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Sprzerzenie_Zwrotne.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Sprzerzenie_Zwrotne.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Sprzerzenie_Zwrotne.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Sprzerzenie_Zwrotne.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Model_ARX.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Model_ARX.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Model_ARX.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Model_ARX.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Regulator_PID.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Regulator_PID.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Regulator_PID.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Regulator_PID.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Generator_Sygnalow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Generator_Sygnalow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Generator_Sygnalow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Generator_Sygnalow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Main_Projektu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D721AED8-9942-4D63-9D9E-0A6846A35B2C}|Projekt_PK\\Projekt_PK.vcxproj|solutionrelative:Projekt_PK\\Testy_UAR.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,43 +50,121 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Testy_UAR.cpp",
-              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.cpp",
-              "RelativeDocumentMoniker": "Projekt_PK\\Testy_UAR.cpp",
-              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.cpp",
-              "RelativeToolTip": "Projekt_PK\\Testy_UAR.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Title": "Sprzerzenie_Zwrotne.cpp",
+              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Sprzerzenie_Zwrotne.cpp",
+              "RelativeDocumentMoniker": "Projekt_PK\\Sprzerzenie_Zwrotne.cpp",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Sprzerzenie_Zwrotne.cpp",
+              "RelativeToolTip": "Projekt_PK\\Sprzerzenie_Zwrotne.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-04T20:08:47.849Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Testy_UAR.h",
-              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.h",
-              "RelativeDocumentMoniker": "Projekt_PK\\Testy_UAR.h",
-              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Testy_UAR.h",
-              "RelativeToolTip": "Projekt_PK\\Testy_UAR.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-04T20:08:38.019Z",
+              "WhenOpened": "2025-01-05T16:07:11.229Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Sprzerzenie_Zwrotne.h",
+              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Sprzerzenie_Zwrotne.h",
+              "RelativeDocumentMoniker": "Projekt_PK\\Sprzerzenie_Zwrotne.h",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Sprzerzenie_Zwrotne.h",
+              "RelativeToolTip": "Projekt_PK\\Sprzerzenie_Zwrotne.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-05T16:07:03.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Model_ARX.cpp",
+              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Model_ARX.cpp",
+              "RelativeDocumentMoniker": "Projekt_PK\\Model_ARX.cpp",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Model_ARX.cpp",
+              "RelativeToolTip": "Projekt_PK\\Model_ARX.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-05T15:56:15.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Model_ARX.h",
+              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Model_ARX.h",
+              "RelativeDocumentMoniker": "Projekt_PK\\Model_ARX.h",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Model_ARX.h",
+              "RelativeToolTip": "Projekt_PK\\Model_ARX.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-05T15:56:06.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Regulator_PID.cpp",
+              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Regulator_PID.cpp",
+              "RelativeDocumentMoniker": "Projekt_PK\\Regulator_PID.cpp",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Regulator_PID.cpp",
+              "RelativeToolTip": "Projekt_PK\\Regulator_PID.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-05T15:49:07.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Regulator_PID.h",
+              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Regulator_PID.h",
+              "RelativeDocumentMoniker": "Projekt_PK\\Regulator_PID.h",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Regulator_PID.h",
+              "RelativeToolTip": "Projekt_PK\\Regulator_PID.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-05T15:48:59.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Generator_Sygnalow.cpp",
+              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Generator_Sygnalow.cpp",
+              "RelativeDocumentMoniker": "Projekt_PK\\Generator_Sygnalow.cpp",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Generator_Sygnalow.cpp",
+              "RelativeToolTip": "Projekt_PK\\Generator_Sygnalow.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-05T15:34:13.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Generator_Sygnalow.h",
+              "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Generator_Sygnalow.h",
+              "RelativeDocumentMoniker": "Projekt_PK\\Generator_Sygnalow.h",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Generator_Sygnalow.h",
+              "RelativeToolTip": "Projekt_PK\\Generator_Sygnalow.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-05T15:34:01.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Main_Projektu.h",
               "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.h",
               "RelativeDocumentMoniker": "Projekt_PK\\Main_Projektu.h",
               "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.h",
               "RelativeToolTip": "Projekt_PK\\Main_Projektu.h",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABEAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-30T19:23:19.903Z",
               "EditorCaption": ""
@@ -73,9 +175,9 @@
               "Title": "Main_Projektu.cpp",
               "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.cpp",
               "RelativeDocumentMoniker": "Projekt_PK\\Main_Projektu.cpp",
-              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.cpp*",
-              "RelativeToolTip": "Projekt_PK\\Main_Projektu.cpp*",
-              "ViewState": "AgIAALoAAAAAAAAAAAAAAMMAAABRAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.cpp",
+              "RelativeToolTip": "Projekt_PK\\Main_Projektu.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-30T19:22:33.599Z",
               "EditorCaption": ""

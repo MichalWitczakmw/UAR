@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MAIN_PROJEKTU_H
+#define MAIN_PROJEKTU_H
 
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -11,7 +12,6 @@
 #include <thread>
 #include <chrono>
 #include <queue>
-#include <limits>
 
 using namespace std;
 
@@ -19,3 +19,5 @@ using namespace std;
 
 // MAINPROJEKTU  main odpala g³ówny program
 // TESTYUAR odpala testy przeznaczoego do tego uk³adu
+
+#endif // !MAIN_PROJEKTU_H

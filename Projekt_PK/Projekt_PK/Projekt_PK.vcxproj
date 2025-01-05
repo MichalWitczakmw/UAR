@@ -127,11 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Generator_Sygnalow.cpp" />
     <ClCompile Include="Main_Projektu.cpp" />
+    <ClCompile Include="Model_ARX.cpp" />
+    <ClCompile Include="Regulator_PID.cpp" />
+    <ClCompile Include="Sprzerzenie_Zwrotne.cpp" />
     <ClCompile Include="Testy_UAR.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Generator_Sygnalow.h" />
     <ClInclude Include="Main_Projektu.h" />
+    <ClInclude Include="Model_ARX.h" />
+    <ClInclude Include="Regulator_PID.h" />
+    <ClInclude Include="Sprzerzenie_Zwrotne.h" />
     <ClInclude Include="Testy_UAR.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
