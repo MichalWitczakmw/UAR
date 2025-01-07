@@ -19,7 +19,7 @@ int main()
 
     Regulator regulator(1, 0.01, 0.05); // Parametry PID
 
-    Sprzezenie sprzezenie(A, B, delay, regulator, JakiSygnal::Prostokatny, wartoscZadana);
+    Sprzezenie sprzezenie(A, B, delay, regulator, JakiSygnal::Sinusoidalny, wartoscZadana);
     int i = 0;
     double tolerance = 0.001;
     int repeatCount = 0;
@@ -43,7 +43,7 @@ int main()
         {
             repeatCount = 0;
         }
-       this_thread::sleep_for(chrono::milliseconds(50));
+       this_thread::sleep_for(chrono::milliseconds(100));
 
         lastOutput = wyjscie;
         i++;

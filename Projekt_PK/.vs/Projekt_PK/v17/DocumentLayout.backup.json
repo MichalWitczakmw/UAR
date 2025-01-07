@@ -62,8 +62,7 @@
               "RelativeToolTip": "Projekt_PK\\Sprzerzenie_Zwrotne.cpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-05T16:07:11.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T16:07:11.229Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "Projekt_PK\\Sprzerzenie_Zwrotne.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-05T16:07:03.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T16:07:03.783Z"
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "RelativeToolTip": "Projekt_PK\\Model_ARX.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-05T15:56:15.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T15:56:15.241Z"
             },
             {
               "$type": "Document",
@@ -101,8 +98,7 @@
               "RelativeToolTip": "Projekt_PK\\Model_ARX.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-05T15:56:06.99Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T15:56:06.99Z"
             },
             {
               "$type": "Document",
@@ -114,8 +110,7 @@
               "RelativeToolTip": "Projekt_PK\\Regulator_PID.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-05T15:49:07.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T15:49:07.387Z"
             },
             {
               "$type": "Document",
@@ -127,8 +122,7 @@
               "RelativeToolTip": "Projekt_PK\\Regulator_PID.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-05T15:48:59.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T15:48:59.204Z"
             },
             {
               "$type": "Document",
@@ -140,8 +134,7 @@
               "RelativeToolTip": "Projekt_PK\\Generator_Sygnalow.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-05T15:34:13.944Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T15:34:13.944Z"
             },
             {
               "$type": "Document",
@@ -153,8 +146,7 @@
               "RelativeToolTip": "Projekt_PK\\Generator_Sygnalow.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-05T15:34:01.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-05T15:34:01.801Z"
             },
             {
               "$type": "Document",
@@ -166,8 +158,7 @@
               "RelativeToolTip": "Projekt_PK\\Main_Projektu.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-30T19:23:19.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-30T19:23:19.903Z"
             },
             {
               "$type": "Document",
@@ -175,9 +166,9 @@
               "Title": "Main_Projektu.cpp",
               "DocumentMoniker": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.cpp",
               "RelativeDocumentMoniker": "Projekt_PK\\Main_Projektu.cpp",
-              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.cpp",
-              "RelativeToolTip": "Projekt_PK\\Main_Projektu.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAxAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Micha\u0142\\Documents\\GitHub\\UAR\\Projekt_PK\\Projekt_PK\\Main_Projektu.cpp*",
+              "RelativeToolTip": "Projekt_PK\\Main_Projektu.cpp*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-30T19:22:33.599Z",
               "EditorCaption": ""
