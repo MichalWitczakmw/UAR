@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->WykresSkokowy->layout()->addWidget(robwykreSkokowy);
     ui->WykresSinusoidalny->layout()->addWidget(robwykreSinusoidalny);
     ui->WykresProstokatny->layout()->addWidget(robwykresProstokatny);
+
+
 }
 
 MainWindow::~MainWindow()
@@ -27,3 +29,9 @@ MainWindow::~MainWindow()
     //delete sprzerzenie;
     //delete regulPID;
 }
+
+void MainWindow::on_ZakonczProgram_clicked()
+{
+    this->close();
+}
+

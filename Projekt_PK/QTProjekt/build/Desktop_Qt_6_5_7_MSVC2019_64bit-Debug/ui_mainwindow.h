@@ -37,24 +37,24 @@ public:
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_7;
-    QLabel *wynik_2;
-    QDoubleSpinBox *wynik;
+    QLabel *NazwaWyniku;
+    QDoubleSpinBox *wartoscWynik;
     QHBoxLayout *horizontalLayout;
-    QLabel *label;
+    QLabel *NazwaKP;
     QDoubleSpinBox *wartoscKP;
     QHBoxLayout *horizontalLayout_2;
-    QLabel *label_2;
+    QLabel *NazwaKI;
     QDoubleSpinBox *wartoscKI;
     QHBoxLayout *horizontalLayout_3;
-    QLabel *label_3;
+    QLabel *NazwaKD;
     QDoubleSpinBox *wartoscKD;
     QHBoxLayout *horizontalLayout_10;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *StartWykresom;
+    QPushButton *StopWykresom;
     QWidget *layoutWidget2;
     QHBoxLayout *horizontalLayout_13;
-    QPushButton *pushButton_8;
-    QPushButton *pushButton_3;
+    QPushButton *OkienkoZapiszPlik;
+    QPushButton *ZakonczProgram;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -104,28 +104,28 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName("horizontalLayout_7");
-        wynik_2 = new QLabel(layoutWidget1);
-        wynik_2->setObjectName("wynik_2");
-        wynik_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        NazwaWyniku = new QLabel(layoutWidget1);
+        NazwaWyniku->setObjectName("NazwaWyniku");
+        NazwaWyniku->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        horizontalLayout_7->addWidget(wynik_2);
+        horizontalLayout_7->addWidget(NazwaWyniku);
 
-        wynik = new QDoubleSpinBox(layoutWidget1);
-        wynik->setObjectName("wynik");
-        wynik->setSingleStep(0.010000000000000);
+        wartoscWynik = new QDoubleSpinBox(layoutWidget1);
+        wartoscWynik->setObjectName("wartoscWynik");
+        wartoscWynik->setSingleStep(0.010000000000000);
 
-        horizontalLayout_7->addWidget(wynik);
+        horizontalLayout_7->addWidget(wartoscWynik);
 
 
         verticalLayout->addLayout(horizontalLayout_7);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        label = new QLabel(layoutWidget1);
-        label->setObjectName("label");
-        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        NazwaKP = new QLabel(layoutWidget1);
+        NazwaKP->setObjectName("NazwaKP");
+        NazwaKP->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        horizontalLayout->addWidget(label);
+        horizontalLayout->addWidget(NazwaKP);
 
         wartoscKP = new QDoubleSpinBox(layoutWidget1);
         wartoscKP->setObjectName("wartoscKP");
@@ -138,11 +138,11 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        label_2 = new QLabel(layoutWidget1);
-        label_2->setObjectName("label_2");
-        label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        NazwaKI = new QLabel(layoutWidget1);
+        NazwaKI->setObjectName("NazwaKI");
+        NazwaKI->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        horizontalLayout_2->addWidget(label_2);
+        horizontalLayout_2->addWidget(NazwaKI);
 
         wartoscKI = new QDoubleSpinBox(layoutWidget1);
         wartoscKI->setObjectName("wartoscKI");
@@ -155,11 +155,11 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName("horizontalLayout_3");
-        label_3 = new QLabel(layoutWidget1);
-        label_3->setObjectName("label_3");
-        label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        NazwaKD = new QLabel(layoutWidget1);
+        NazwaKD->setObjectName("NazwaKD");
+        NazwaKD->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        horizontalLayout_3->addWidget(label_3);
+        horizontalLayout_3->addWidget(NazwaKD);
 
         wartoscKD = new QDoubleSpinBox(layoutWidget1);
         wartoscKD->setObjectName("wartoscKD");
@@ -172,15 +172,15 @@ public:
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName("horizontalLayout_10");
-        pushButton = new QPushButton(layoutWidget1);
-        pushButton->setObjectName("pushButton");
+        StartWykresom = new QPushButton(layoutWidget1);
+        StartWykresom->setObjectName("StartWykresom");
 
-        horizontalLayout_10->addWidget(pushButton);
+        horizontalLayout_10->addWidget(StartWykresom);
 
-        pushButton_2 = new QPushButton(layoutWidget1);
-        pushButton_2->setObjectName("pushButton_2");
+        StopWykresom = new QPushButton(layoutWidget1);
+        StopWykresom->setObjectName("StopWykresom");
 
-        horizontalLayout_10->addWidget(pushButton_2);
+        horizontalLayout_10->addWidget(StopWykresom);
 
 
         verticalLayout->addLayout(horizontalLayout_10);
@@ -191,15 +191,15 @@ public:
         horizontalLayout_13 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_13->setObjectName("horizontalLayout_13");
         horizontalLayout_13->setContentsMargins(0, 0, 0, 0);
-        pushButton_8 = new QPushButton(layoutWidget2);
-        pushButton_8->setObjectName("pushButton_8");
+        OkienkoZapiszPlik = new QPushButton(layoutWidget2);
+        OkienkoZapiszPlik->setObjectName("OkienkoZapiszPlik");
 
-        horizontalLayout_13->addWidget(pushButton_8);
+        horizontalLayout_13->addWidget(OkienkoZapiszPlik);
 
-        pushButton_3 = new QPushButton(layoutWidget2);
-        pushButton_3->setObjectName("pushButton_3");
+        ZakonczProgram = new QPushButton(layoutWidget2);
+        ZakonczProgram->setObjectName("ZakonczProgram");
 
-        horizontalLayout_13->addWidget(pushButton_3);
+        horizontalLayout_13->addWidget(ZakonczProgram);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -218,14 +218,14 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        wynik_2->setText(QCoreApplication::translate("MainWindow", "Wpisz wynik do uzyskania", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "KP", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "KI", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "KD", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Stop", nullptr));
-        pushButton_8->setText(QCoreApplication::translate("MainWindow", "Zapis do pliku", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Wyjd\305\272", nullptr));
+        NazwaWyniku->setText(QCoreApplication::translate("MainWindow", "Wpisz wynik do uzyskania", nullptr));
+        NazwaKP->setText(QCoreApplication::translate("MainWindow", "KP", nullptr));
+        NazwaKI->setText(QCoreApplication::translate("MainWindow", "KI", nullptr));
+        NazwaKD->setText(QCoreApplication::translate("MainWindow", "KD", nullptr));
+        StartWykresom->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
+        StopWykresom->setText(QCoreApplication::translate("MainWindow", "Stop", nullptr));
+        OkienkoZapiszPlik->setText(QCoreApplication::translate("MainWindow", "Zapis do pliku", nullptr));
+        ZakonczProgram->setText(QCoreApplication::translate("MainWindow", "Wyjd\305\272", nullptr));
     } // retranslateUi
 
 };
