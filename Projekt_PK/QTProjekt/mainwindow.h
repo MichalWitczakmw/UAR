@@ -12,6 +12,7 @@
 #include "../Projekt_PK/Model_ARX.h"
 #include "../Projekt_PK/Regulator_PID.h"
 #include "../Projekt_PK/Sprzerzenie_Zwrotne.h"
+#include "../Projekt_PK/Robie_Wykres.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -37,9 +38,8 @@ private:
     QChart * chart;
     QChartView * chartview;
     QTimer *timer;
-
-    int currentTime;
-
-    void updateChart();
+    RobieWykres * robwykreSkokowy;
+    RobieWykres * robwykreSinusoidalny;
+    RobieWykres * robwykresProstokatny;
 };
 #endif // MAINWINDOW_H

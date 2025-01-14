@@ -9,6 +9,7 @@
 #ifndef UI_MAINWINDOW_H
 #define UI_MAINWINDOW_H
 
+#include <QtCharts/QChartView>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
@@ -22,6 +23,9 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
+    QChartView *WykresSinusoidalny;
+    QChartView *WykresProstokatny;
+    QChartView *WykresSkokowy;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -32,6 +36,15 @@ public:
         MainWindow->resize(942, 683);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
+        WykresSinusoidalny = new QChartView(centralwidget);
+        WykresSinusoidalny->setObjectName("WykresSinusoidalny");
+        WykresSinusoidalny->setGeometry(QRect(360, 220, 256, 192));
+        WykresProstokatny = new QChartView(centralwidget);
+        WykresProstokatny->setObjectName("WykresProstokatny");
+        WykresProstokatny->setGeometry(QRect(360, 420, 256, 192));
+        WykresSkokowy = new QChartView(centralwidget);
+        WykresSkokowy->setObjectName("WykresSkokowy");
+        WykresSkokowy->setGeometry(QRect(360, 20, 256, 192));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

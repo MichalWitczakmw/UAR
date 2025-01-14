@@ -12,6 +12,7 @@ SOURCES += \
     ../Projekt_PK/Generator_Sygnalow.cpp \
     ../Projekt_PK/Model_ARX.cpp \
     ../Projekt_PK/Regulator_PID.cpp \
+    ../Projekt_PK/Robie_Wykres.cpp \
     ../Projekt_PK/Sprzerzenie_Zwrotne.cpp \
     main.cpp \
     mainwindow.cpp
@@ -20,6 +21,7 @@ HEADERS += \
     ../Projekt_PK/Generator_Sygnalow.h \
     ../Projekt_PK/Model_ARX.h \
     ../Projekt_PK/Regulator_PID.h \
+    ../Projekt_PK/Robie_Wykres.h \
     ../Projekt_PK/Sprzerzenie_Zwrotne.h \
     mainwindow.h
 
