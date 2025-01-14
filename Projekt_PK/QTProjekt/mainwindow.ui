@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>431</x>
@@ -77,217 +77,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget_3">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>290</y>
-      <width>191</width>
-      <height>160</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_8">
-       <item>
-        <widget class="QLabel" name="wynik_3">
-         <property name="text">
-          <string>Wynik</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDoubleSpinBox" name="wynik_4">
-         <property name="singleStep">
-          <double>0.010000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_9">
-       <item>
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>KP</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDoubleSpinBox" name="wartoscKP_3">
-         <property name="singleStep">
-          <double>0.010000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_12">
-       <item>
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>KI</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDoubleSpinBox" name="wartoscKI_3">
-         <property name="singleStep">
-          <double>0.010000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_14">
-       <item>
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>KD</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDoubleSpinBox" name="wartoscKD_3">
-         <property name="singleStep">
-          <double>0.010000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_15">
-       <item>
-        <widget class="QPushButton" name="pushButton_6">
-         <property name="text">
-          <string>Start</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_7">
-         <property name="text">
-          <string>Stop</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget_4">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>490</y>
-      <width>191</width>
-      <height>160</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_4">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_16">
-       <item>
-        <widget class="QLabel" name="wynik_5">
-         <property name="text">
-          <string>Wynik</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDoubleSpinBox" name="wynik_6">
-         <property name="singleStep">
-          <double>0.010000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_17">
-       <item>
-        <widget class="QLabel" name="label_10">
-         <property name="text">
-          <string>KP</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDoubleSpinBox" name="wartoscKP_4">
-         <property name="singleStep">
-          <double>0.010000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_18">
-       <item>
-        <widget class="QLabel" name="label_11">
-         <property name="text">
-          <string>KI</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDoubleSpinBox" name="wartoscKI_4">
-         <property name="singleStep">
-          <double>0.010000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_19">
-       <item>
-        <widget class="QLabel" name="label_12">
-         <property name="text">
-          <string>KD</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDoubleSpinBox" name="wartoscKD_4">
-         <property name="singleStep">
-          <double>0.010000000000000</double>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_20">
-       <item>
-        <widget class="QPushButton" name="pushButton_9">
-         <property name="text">
-          <string>Start</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_10">
-         <property name="text">
-          <string>Stop</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>80</y>
-      <width>191</width>
-      <height>160</height>
+      <x>30</x>
+      <y>20</y>
+      <width>361</width>
+      <height>481</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -296,7 +92,10 @@
        <item>
         <widget class="QLabel" name="wynik_2">
          <property name="text">
-          <string>Wynik</string>
+          <string>Wpisz wynik do uzyskania</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -316,6 +115,9 @@
          <property name="text">
           <string>KP</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
         </widget>
        </item>
        <item>
@@ -334,6 +136,9 @@
          <property name="text">
           <string>KI</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
         </widget>
        </item>
        <item>
@@ -351,6 +156,9 @@
         <widget class="QLabel" name="label_3">
          <property name="text">
           <string>KD</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -383,7 +191,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>480</x>
