@@ -133,6 +133,7 @@
     <ClCompile Include="Regulator_PID.cpp" />
     <ClCompile Include="Sprzerzenie_Zwrotne.cpp" />
     <ClCompile Include="Testy_UAR.cpp" />
+    <ClCompile Include="Zapisze_Do_Pliku.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Generator_Sygnalow.h" />
@@ -141,6 +142,7 @@
     <ClInclude Include="Regulator_PID.h" />
     <ClInclude Include="Sprzerzenie_Zwrotne.h" />
     <ClInclude Include="Testy_UAR.h" />
+    <ClInclude Include="Zapisze_Do_Pliku.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

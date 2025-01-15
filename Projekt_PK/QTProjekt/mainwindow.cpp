@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "main_Okno_Zapisu.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -33,5 +34,13 @@ MainWindow::~MainWindow()
 void MainWindow::on_ZakonczProgram_clicked()
 {
     this->close();
+}
+
+
+void MainWindow::on_OkienkoZapiszPlik_clicked()
+{
+    mainOknoZapisu zapisz;
+    zapisz.setModal(true);
+    zapisz.exec();
 }
 

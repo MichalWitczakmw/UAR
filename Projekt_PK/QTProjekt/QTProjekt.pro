@@ -14,7 +14,9 @@ SOURCES += \
     ../Projekt_PK/Regulator_PID.cpp \
     ../Projekt_PK/Robie_Wykres.cpp \
     ../Projekt_PK/Sprzerzenie_Zwrotne.cpp \
+    ../Projekt_PK/Zapisze_Do_Pliku.cpp \
     main.cpp \
+    main_Okno_Zapisu.cpp \
     mainwindow.cpp
 
 HEADERS += \
@@ -23,9 +25,12 @@ HEADERS += \
     ../Projekt_PK/Regulator_PID.h \
     ../Projekt_PK/Robie_Wykres.h \
     ../Projekt_PK/Sprzerzenie_Zwrotne.h \
+    ../Projekt_PK/Zapisze_Do_Pliku.h \
+    main_Okno_Zapisu.h \
     mainwindow.h
 
 FORMS += \
+    main_Okno_Zapisu.ui \
     mainwindow.ui
 
 # Default rules for deployment.

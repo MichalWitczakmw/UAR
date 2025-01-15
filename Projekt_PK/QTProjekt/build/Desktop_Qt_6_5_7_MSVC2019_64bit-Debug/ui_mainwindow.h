@@ -13,7 +13,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDoubleSpinBox>
-#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -30,11 +29,6 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QWidget *layoutWidget;
-    QFormLayout *formLayout;
-    QChartView *WykresProstokatny;
-    QChartView *WykresSinusoidalny;
-    QChartView *WykresSkokowy;
-    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout_7;
     QLabel *NazwaWyniku;
@@ -51,10 +45,13 @@ public:
     QHBoxLayout *horizontalLayout_10;
     QPushButton *StartWykresom;
     QPushButton *StopWykresom;
-    QWidget *layoutWidget2;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_13;
     QPushButton *OkienkoZapiszPlik;
     QPushButton *ZakonczProgram;
+    QChartView *WykresProstokatny;
+    QChartView *WykresSkokowy;
+    QChartView *WykresSinusoidalny;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -67,50 +64,19 @@ public:
         centralwidget->setObjectName("centralwidget");
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(431, 1, 481, 661));
-        formLayout = new QFormLayout(layoutWidget);
-        formLayout->setObjectName("formLayout");
-        formLayout->setSizeConstraint(QLayout::SizeConstraint::SetDefaultConstraint);
-        formLayout->setFieldGrowthPolicy(QFormLayout::FieldGrowthPolicy::FieldsStayAtSizeHint);
-        formLayout->setRowWrapPolicy(QFormLayout::RowWrapPolicy::DontWrapRows);
-        formLayout->setLabelAlignment(Qt::AlignmentFlag::AlignCenter);
-        formLayout->setFormAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
-        formLayout->setHorizontalSpacing(20);
-        formLayout->setVerticalSpacing(20);
-        formLayout->setContentsMargins(0, 0, 0, 0);
-        WykresProstokatny = new QChartView(layoutWidget);
-        WykresProstokatny->setObjectName("WykresProstokatny");
-        WykresProstokatny->setMinimumSize(QSize(350, 150));
-
-        formLayout->setWidget(3, QFormLayout::LabelRole, WykresProstokatny);
-
-        WykresSinusoidalny = new QChartView(layoutWidget);
-        WykresSinusoidalny->setObjectName("WykresSinusoidalny");
-        WykresSinusoidalny->setMinimumSize(QSize(350, 150));
-
-        formLayout->setWidget(2, QFormLayout::LabelRole, WykresSinusoidalny);
-
-        WykresSkokowy = new QChartView(layoutWidget);
-        WykresSkokowy->setObjectName("WykresSkokowy");
-        WykresSkokowy->setMinimumSize(QSize(350, 150));
-
-        formLayout->setWidget(1, QFormLayout::LabelRole, WykresSkokowy);
-
-        layoutWidget1 = new QWidget(centralwidget);
-        layoutWidget1->setObjectName("layoutWidget1");
-        layoutWidget1->setGeometry(QRect(30, 20, 361, 481));
-        verticalLayout = new QVBoxLayout(layoutWidget1);
+        layoutWidget->setGeometry(QRect(30, 20, 361, 481));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName("horizontalLayout_7");
-        NazwaWyniku = new QLabel(layoutWidget1);
+        NazwaWyniku = new QLabel(layoutWidget);
         NazwaWyniku->setObjectName("NazwaWyniku");
         NazwaWyniku->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         horizontalLayout_7->addWidget(NazwaWyniku);
 
-        wartoscWynik = new QDoubleSpinBox(layoutWidget1);
+        wartoscWynik = new QDoubleSpinBox(layoutWidget);
         wartoscWynik->setObjectName("wartoscWynik");
         wartoscWynik->setSingleStep(0.010000000000000);
 
@@ -121,13 +87,13 @@ public:
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        NazwaKP = new QLabel(layoutWidget1);
+        NazwaKP = new QLabel(layoutWidget);
         NazwaKP->setObjectName("NazwaKP");
         NazwaKP->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         horizontalLayout->addWidget(NazwaKP);
 
-        wartoscKP = new QDoubleSpinBox(layoutWidget1);
+        wartoscKP = new QDoubleSpinBox(layoutWidget);
         wartoscKP->setObjectName("wartoscKP");
         wartoscKP->setSingleStep(0.010000000000000);
 
@@ -138,13 +104,13 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        NazwaKI = new QLabel(layoutWidget1);
+        NazwaKI = new QLabel(layoutWidget);
         NazwaKI->setObjectName("NazwaKI");
         NazwaKI->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         horizontalLayout_2->addWidget(NazwaKI);
 
-        wartoscKI = new QDoubleSpinBox(layoutWidget1);
+        wartoscKI = new QDoubleSpinBox(layoutWidget);
         wartoscKI->setObjectName("wartoscKI");
         wartoscKI->setSingleStep(0.010000000000000);
 
@@ -155,13 +121,13 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName("horizontalLayout_3");
-        NazwaKD = new QLabel(layoutWidget1);
+        NazwaKD = new QLabel(layoutWidget);
         NazwaKD->setObjectName("NazwaKD");
         NazwaKD->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         horizontalLayout_3->addWidget(NazwaKD);
 
-        wartoscKD = new QDoubleSpinBox(layoutWidget1);
+        wartoscKD = new QDoubleSpinBox(layoutWidget);
         wartoscKD->setObjectName("wartoscKD");
         wartoscKD->setSingleStep(0.010000000000000);
 
@@ -172,12 +138,12 @@ public:
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName("horizontalLayout_10");
-        StartWykresom = new QPushButton(layoutWidget1);
+        StartWykresom = new QPushButton(layoutWidget);
         StartWykresom->setObjectName("StartWykresom");
 
         horizontalLayout_10->addWidget(StartWykresom);
 
-        StopWykresom = new QPushButton(layoutWidget1);
+        StopWykresom = new QPushButton(layoutWidget);
         StopWykresom->setObjectName("StopWykresom");
 
         horizontalLayout_10->addWidget(StopWykresom);
@@ -185,22 +151,34 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_10);
 
-        layoutWidget2 = new QWidget(centralwidget);
-        layoutWidget2->setObjectName("layoutWidget2");
-        layoutWidget2->setGeometry(QRect(480, 680, 361, 51));
-        horizontalLayout_13 = new QHBoxLayout(layoutWidget2);
+        layoutWidget1 = new QWidget(centralwidget);
+        layoutWidget1->setObjectName("layoutWidget1");
+        layoutWidget1->setGeometry(QRect(20, 530, 361, 51));
+        horizontalLayout_13 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_13->setObjectName("horizontalLayout_13");
         horizontalLayout_13->setContentsMargins(0, 0, 0, 0);
-        OkienkoZapiszPlik = new QPushButton(layoutWidget2);
+        OkienkoZapiszPlik = new QPushButton(layoutWidget1);
         OkienkoZapiszPlik->setObjectName("OkienkoZapiszPlik");
 
         horizontalLayout_13->addWidget(OkienkoZapiszPlik);
 
-        ZakonczProgram = new QPushButton(layoutWidget2);
+        ZakonczProgram = new QPushButton(layoutWidget1);
         ZakonczProgram->setObjectName("ZakonczProgram");
 
         horizontalLayout_13->addWidget(ZakonczProgram);
 
+        WykresProstokatny = new QChartView(centralwidget);
+        WykresProstokatny->setObjectName("WykresProstokatny");
+        WykresProstokatny->setGeometry(QRect(440, 250, 551, 251));
+        WykresProstokatny->setMinimumSize(QSize(350, 150));
+        WykresSkokowy = new QChartView(centralwidget);
+        WykresSkokowy->setObjectName("WykresSkokowy");
+        WykresSkokowy->setGeometry(QRect(440, 0, 551, 251));
+        WykresSkokowy->setMinimumSize(QSize(350, 150));
+        WykresSinusoidalny = new QChartView(centralwidget);
+        WykresSinusoidalny->setObjectName("WykresSinusoidalny");
+        WykresSinusoidalny->setGeometry(QRect(440, 500, 551, 231));
+        WykresSinusoidalny->setMinimumSize(QSize(350, 150));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -225,7 +203,7 @@ public:
         StartWykresom->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
         StopWykresom->setText(QCoreApplication::translate("MainWindow", "Stop", nullptr));
         OkienkoZapiszPlik->setText(QCoreApplication::translate("MainWindow", "Zapis do pliku", nullptr));
-        ZakonczProgram->setText(QCoreApplication::translate("MainWindow", "Wyjd\305\272", nullptr));
+        ZakonczProgram->setText(QCoreApplication::translate("MainWindow", " Wyjd\305\272 z Programu", nullptr));
     } // retranslateUi
 
 };

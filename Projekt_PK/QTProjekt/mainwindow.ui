@@ -17,69 +17,6 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>431</x>
-      <y>1</y>
-      <width>481</width>
-      <height>661</height>
-     </rect>
-    </property>
-    <layout class="QFormLayout" name="formLayout">
-     <property name="sizeConstraint">
-      <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
-     </property>
-     <property name="fieldGrowthPolicy">
-      <enum>QFormLayout::FieldGrowthPolicy::FieldsStayAtSizeHint</enum>
-     </property>
-     <property name="rowWrapPolicy">
-      <enum>QFormLayout::RowWrapPolicy::DontWrapRows</enum>
-     </property>
-     <property name="labelAlignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
-     <property name="formAlignment">
-      <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
-     </property>
-     <property name="horizontalSpacing">
-      <number>20</number>
-     </property>
-     <property name="verticalSpacing">
-      <number>20</number>
-     </property>
-     <item row="3" column="0">
-      <widget class="QChartView" name="WykresProstokatny">
-       <property name="minimumSize">
-        <size>
-         <width>350</width>
-         <height>150</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QChartView" name="WykresSinusoidalny">
-       <property name="minimumSize">
-        <size>
-         <width>350</width>
-         <height>150</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QChartView" name="WykresSkokowy">
-       <property name="minimumSize">
-        <size>
-         <width>350</width>
-         <height>150</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
       <x>30</x>
       <y>20</y>
       <width>361</width>
@@ -194,8 +131,8 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>680</y>
+      <x>20</x>
+      <y>530</y>
       <width>361</width>
       <height>51</height>
      </rect>
@@ -211,11 +148,59 @@
      <item>
       <widget class="QPushButton" name="ZakonczProgram">
        <property name="text">
-        <string>Wyjdź</string>
+        <string> Wyjdź z Programu</string>
        </property>
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QChartView" name="WykresProstokatny">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>250</y>
+      <width>551</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>350</width>
+      <height>150</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QChartView" name="WykresSkokowy">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>0</y>
+      <width>551</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>350</width>
+      <height>150</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QChartView" name="WykresSinusoidalny">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>500</y>
+      <width>551</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>350</width>
+      <height>150</height>
+     </size>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

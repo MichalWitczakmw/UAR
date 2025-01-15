@@ -1,2 +1,9 @@
-﻿  Main_Projektu.cpp
-  Projekt_PK.vcxproj -> C:\Users\Michał\Documents\GitHub\UAR\Projekt_PK\x64\Debug\Projekt_PK.exe
+﻿  Zapisze_Do_Pliku.cpp
+C:\Users\Michał\Documents\GitHub\UAR\Projekt_PK\Projekt_PK\Zapisze_Do_Pliku.cpp(3,17): error C2084: funkcja "ZapiszeDoPliku::ZapiszeDoPliku(bool,double,double,double,double,std::string)" ma już treść
+      C:\Users\Michał\Documents\GitHub\UAR\Projekt_PK\Projekt_PK\Zapisze_Do_Pliku.h(9,5):
+      zobacz poprzednią definicję „ZapiszeDoPliku::ZapiszeDoPliku”
+  
+C:\Users\Michał\Documents\GitHub\UAR\Projekt_PK\Projekt_PK\Zapisze_Do_Pliku.cpp(10,18): error C2084: funkcja "ZapiszeDoPliku::~ZapiszeDoPliku(void)" ma już treść
+      C:\Users\Michał\Documents\GitHub\UAR\Projekt_PK\Projekt_PK\Zapisze_Do_Pliku.h(10,6):
+      zobacz poprzednią definicję „ZapiszeDoPliku::~ZapiszeDoPliku”
+  

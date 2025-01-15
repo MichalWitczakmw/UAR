@@ -31,6 +31,8 @@ public:
 private slots:
     void on_ZakonczProgram_clicked();
 
+    void on_OkienkoZapiszPlik_clicked();
+
 private:
     Ui::MainWindow *ui;
     Sprzezenie * sprzerzenieZwrotne;

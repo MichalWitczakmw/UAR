@@ -4,14 +4,14 @@ RobieWykres::RobieWykres(JakiSygnal signalType, QWidget *parent)
     : QWidget(parent), currentTime(0)
 {
     // Inicjalizacja regulatora i sprzężenia
-    regulPID = new Regulator(1, 1, 1);
+    regulPID = new Regulator(1, 0.1, 0.1);
     std::deque<double> a = {0.4};
     std::deque<double> b = {0.6};
     sprzerzenie = new Sprzezenie(a, b, 1, *regulPID, signalType, 10.5);
 
     // Inicjalizacja serii danych
     seria = new QLineSeries();
-    seria->append(0, sprzerzenie->Symuluj(1));
+    seria->append(0, sprzerzenie->Symuluj(currentTime));
 
     // Tworzenie i konfiguracja wykresu
     trzorzeniewykresu();
