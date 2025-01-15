@@ -7,21 +7,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    // Tworzenie trzech okienek z wykresami
-    robwykreSkokowy = new RobieWykres(JakiSygnal::Skokowy, this);
-    robwykreSinusoidalny = new RobieWykres(JakiSygnal::Sinusoidalny, this);
-    robwykresProstokatny = new RobieWykres(JakiSygnal::Prostokatny, this);
-
-    ui->WykresSkokowy->setLayout(new QVBoxLayout);
-    ui->WykresSinusoidalny->setLayout(new QVBoxLayout);
-    ui->WykresProstokatny->setLayout(new QVBoxLayout);
-
-    ui->WykresSkokowy->layout()->addWidget(robwykreSkokowy);
-    ui->WykresSinusoidalny->layout()->addWidget(robwykreSinusoidalny);
-    ui->WykresProstokatny->layout()->addWidget(robwykresProstokatny);
-
-
 }
 
 MainWindow::~MainWindow()
@@ -42,5 +27,28 @@ void MainWindow::on_OkienkoZapiszPlik_clicked()
     mainOknoZapisu zapisz;
     zapisz.setModal(true);
     zapisz.exec();
+}
+
+
+void MainWindow::on_StartWykresom_clicked()
+{
+    // Tworzenie trzech okienek z wykresami
+    robwykreSkokowy = new RobieWykres(JakiSygnal::Skokowy, this);
+    robwykreSinusoidalny = new RobieWykres(JakiSygnal::Sinusoidalny, this);
+    robwykresProstokatny = new RobieWykres(JakiSygnal::Prostokatny, this);
+
+    ui->WykresSkokowy->setLayout(new QVBoxLayout);
+    ui->WykresSinusoidalny->setLayout(new QVBoxLayout);
+    ui->WykresProstokatny->setLayout(new QVBoxLayout);
+
+    ui->WykresSkokowy->layout()->addWidget(robwykreSkokowy);
+    ui->WykresSinusoidalny->layout()->addWidget(robwykreSinusoidalny);
+    ui->WykresProstokatny->layout()->addWidget(robwykresProstokatny);
+}
+
+
+void MainWindow::on_StopWykresom_clicked()
+{
+
 }
 

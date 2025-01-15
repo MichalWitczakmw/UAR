@@ -52,6 +52,9 @@ public:
     QChartView *WykresProstokatny;
     QChartView *WykresSkokowy;
     QChartView *WykresSinusoidalny;
+    QLabel *label;
+    QLabel *label_2;
+    QLabel *label_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -179,6 +182,15 @@ public:
         WykresSinusoidalny->setObjectName("WykresSinusoidalny");
         WykresSinusoidalny->setGeometry(QRect(440, 500, 551, 231));
         WykresSinusoidalny->setMinimumSize(QSize(350, 150));
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(680, 260, 91, 16));
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(680, 20, 81, 16));
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(670, 520, 91, 16));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -204,6 +216,9 @@ public:
         StopWykresom->setText(QCoreApplication::translate("MainWindow", "Stop", nullptr));
         OkienkoZapiszPlik->setText(QCoreApplication::translate("MainWindow", "Zapis do pliku", nullptr));
         ZakonczProgram->setText(QCoreApplication::translate("MainWindow", " Wyjd\305\272 z Programu", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Prostok\304\205tny", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Skokowy", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "Sinusoidalny", nullptr));
     } // retranslateUi
 
 };
