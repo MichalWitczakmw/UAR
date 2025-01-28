@@ -18,6 +18,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -42,8 +43,18 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QLabel *NazwaTD;
     QDoubleSpinBox *wartoscTD;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *nazwaZaklocenia;
+    QSpinBox *wartoscZaklocenia;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *nazwaA;
+    QDoubleSpinBox *wartoscA;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *nazwaB;
+    QDoubleSpinBox *wartoscB;
     QHBoxLayout *horizontalLayout_10;
     QPushButton *StartWykresom;
+    QPushButton *Reset;
     QPushButton *StopWykresom;
     QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_13;
@@ -98,6 +109,7 @@ public:
 
         wartoscKP = new QDoubleSpinBox(layoutWidget);
         wartoscKP->setObjectName("wartoscKP");
+        wartoscKP->setMaximum(10.000000000000000);
         wartoscKP->setSingleStep(0.010000000000000);
 
         horizontalLayout->addWidget(wartoscKP);
@@ -115,6 +127,7 @@ public:
 
         wartoscTI = new QDoubleSpinBox(layoutWidget);
         wartoscTI->setObjectName("wartoscTI");
+        wartoscTI->setMaximum(10.000000000000000);
         wartoscTI->setSingleStep(0.010000000000000);
 
         horizontalLayout_2->addWidget(wartoscTI);
@@ -132,6 +145,7 @@ public:
 
         wartoscTD = new QDoubleSpinBox(layoutWidget);
         wartoscTD->setObjectName("wartoscTD");
+        wartoscTD->setMaximum(10.000000000000000);
         wartoscTD->setSingleStep(0.010000000000000);
 
         horizontalLayout_3->addWidget(wartoscTD);
@@ -139,12 +153,68 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        nazwaZaklocenia = new QLabel(layoutWidget);
+        nazwaZaklocenia->setObjectName("nazwaZaklocenia");
+
+        horizontalLayout_4->addWidget(nazwaZaklocenia);
+
+        wartoscZaklocenia = new QSpinBox(layoutWidget);
+        wartoscZaklocenia->setObjectName("wartoscZaklocenia");
+        wartoscZaklocenia->setMinimum(1);
+        wartoscZaklocenia->setMaximum(100);
+
+        horizontalLayout_4->addWidget(wartoscZaklocenia);
+
+
+        verticalLayout->addLayout(horizontalLayout_4);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName("horizontalLayout_5");
+        nazwaA = new QLabel(layoutWidget);
+        nazwaA->setObjectName("nazwaA");
+
+        horizontalLayout_5->addWidget(nazwaA);
+
+        wartoscA = new QDoubleSpinBox(layoutWidget);
+        wartoscA->setObjectName("wartoscA");
+        wartoscA->setMaximum(1.000000000000000);
+        wartoscA->setSingleStep(0.010000000000000);
+
+        horizontalLayout_5->addWidget(wartoscA);
+
+
+        verticalLayout->addLayout(horizontalLayout_5);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName("horizontalLayout_6");
+        nazwaB = new QLabel(layoutWidget);
+        nazwaB->setObjectName("nazwaB");
+
+        horizontalLayout_6->addWidget(nazwaB);
+
+        wartoscB = new QDoubleSpinBox(layoutWidget);
+        wartoscB->setObjectName("wartoscB");
+        wartoscB->setMaximum(1.000000000000000);
+        wartoscB->setSingleStep(0.010000000000000);
+
+        horizontalLayout_6->addWidget(wartoscB);
+
+
+        verticalLayout->addLayout(horizontalLayout_6);
+
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName("horizontalLayout_10");
         StartWykresom = new QPushButton(layoutWidget);
         StartWykresom->setObjectName("StartWykresom");
 
         horizontalLayout_10->addWidget(StartWykresom);
+
+        Reset = new QPushButton(layoutWidget);
+        Reset->setObjectName("Reset");
+
+        horizontalLayout_10->addWidget(Reset);
 
         StopWykresom = new QPushButton(layoutWidget);
         StopWykresom->setObjectName("StopWykresom");
@@ -208,11 +278,15 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        NazwaWyniku->setText(QCoreApplication::translate("MainWindow", "Wpisz wynik do uzyskania", nullptr));
+        NazwaWyniku->setText(QCoreApplication::translate("MainWindow", "Wartosc Zadana", nullptr));
         NazwaKP->setText(QCoreApplication::translate("MainWindow", "KP", nullptr));
         NazwaTI->setText(QCoreApplication::translate("MainWindow", "TI", nullptr));
         NazwaTD->setText(QCoreApplication::translate("MainWindow", "TD", nullptr));
+        nazwaZaklocenia->setText(QCoreApplication::translate("MainWindow", "zaklozenie w %", nullptr));
+        nazwaA->setText(QCoreApplication::translate("MainWindow", "A", nullptr));
+        nazwaB->setText(QCoreApplication::translate("MainWindow", "B", nullptr));
         StartWykresom->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
+        Reset->setText(QCoreApplication::translate("MainWindow", "Reset", nullptr));
         StopWykresom->setText(QCoreApplication::translate("MainWindow", "Stop", nullptr));
         OkienkoZapiszPlik->setText(QCoreApplication::translate("MainWindow", "Zapis do pliku", nullptr));
         ZakonczProgram->setText(QCoreApplication::translate("MainWindow", " Wyjd\305\272 z Programu", nullptr));

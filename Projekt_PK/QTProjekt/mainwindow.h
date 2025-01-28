@@ -37,6 +37,8 @@ private slots:
 
     void on_StopWykresom_clicked();
 
+    void on_Reset_clicked();
+
 private:
     Ui::MainWindow *ui;
     Sprzezenie * sprzerzenieZwrotne;
@@ -47,8 +49,15 @@ private:
     QChart * chart;
     QChartView * chartview;
     QTimer *timer;
-    RobieWykres * robwykreSkokowy;
-    RobieWykres * robwykreSinusoidalny;
-    RobieWykres * robwykresProstokatny;
+    RobieWykres * wykresWartosciWyjsciowej;
+    RobieWykres * wykresUchybu;
+    RobieWykres *  wykresRegulatoraPID;
+    deque<double> a = {0.6};
+    deque<double> b = {0.4};
+    double Kp =1;
+    double Ti = 0.5;
+    double Td = 0.4;
+    double wartoscZadana;
+    double wartoscZaklocenia;
 };
 #endif // MAINWINDOW_H

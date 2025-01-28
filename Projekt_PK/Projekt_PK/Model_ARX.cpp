@@ -13,12 +13,12 @@ double ModelARX::ObliczWyjscie(const deque<double>& wejscia, const deque<double>
         if (i - 1 < wyjscia.size())
             y -= m_Awsopoczynniki[i] * wyjscia[wyjscia.size() - i];
     }
-    return y + zaklocenie();
+    return y + f_zaklocenie();
 }
 
 void ModelARX::AktualizujBufory(deque<double>& wejscia, deque<double>& wyjscia, double noweWejscie, double noweWyjscie)
 {
-    if (!wejscia.empty() && wejscia.size() == m_Bwsopoczynniki.size() + delay)
+    if (!wejscia.empty() && wejscia.size() == m_Bwsopoczynniki.size() + m_opoznienie)
         wejscia.pop_front();
     if (!wejscia.empty() && wyjscia.size() == m_Awsopoczynniki.size() - 1)
         wyjscia.pop_front();

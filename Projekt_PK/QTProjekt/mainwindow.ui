@@ -29,7 +29,7 @@
        <item>
         <widget class="QLabel" name="NazwaWyniku">
          <property name="text">
-          <string>Wpisz wynik do uzyskania</string>
+          <string>Wartosc Zadana</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -59,6 +59,9 @@
        </item>
        <item>
         <widget class="QDoubleSpinBox" name="wartoscKP">
+         <property name="maximum">
+          <double>10.000000000000000</double>
+         </property>
          <property name="singleStep">
           <double>0.010000000000000</double>
          </property>
@@ -80,6 +83,9 @@
        </item>
        <item>
         <widget class="QDoubleSpinBox" name="wartoscTI">
+         <property name="maximum">
+          <double>10.000000000000000</double>
+         </property>
          <property name="singleStep">
           <double>0.010000000000000</double>
          </property>
@@ -101,6 +107,72 @@
        </item>
        <item>
         <widget class="QDoubleSpinBox" name="wartoscTD">
+         <property name="maximum">
+          <double>10.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.010000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLabel" name="nazwaZaklocenia">
+         <property name="text">
+          <string>zaklozenie w %</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="wartoscZaklocenia">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QLabel" name="nazwaA">
+         <property name="text">
+          <string>A</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="wartoscA">
+         <property name="maximum">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="singleStep">
+          <double>0.010000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLabel" name="nazwaB">
+         <property name="text">
+          <string>B</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="wartoscB">
+         <property name="maximum">
+          <double>1.000000000000000</double>
+         </property>
          <property name="singleStep">
           <double>0.010000000000000</double>
          </property>
@@ -114,6 +186,13 @@
         <widget class="QPushButton" name="StartWykresom">
          <property name="text">
           <string>Start</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Reset">
+         <property name="text">
+          <string>Reset</string>
          </property>
         </widget>
        </item>

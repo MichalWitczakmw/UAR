@@ -1,13 +1,10 @@
 #include "Robie_Wykres.h"
 
-RobieWykres::RobieWykres(JakiSygnal rodzajSygnalu,double wartoscZaklocenia, QWidget *parent)
+RobieWykres::RobieWykres(deque<double> a,deque<double> b,double Kp,double Ti, double Td,JakiSygnal rodzajSygnalu,double wartoscZaklocenia, QWidget *parent)
     : QWidget(parent), interwal(0)
 {
     // Inicjalizacja regulatora i sprzężenia
-    regulPID = new Regulator(0.5, 0.3, 0.1);
-    std::deque<double> a = {0.4};
-    std::deque<double> b = {0.6};
-    sprzerzenie = new Sprzezenie(a, b, 1, *regulPID, rodzajSygnalu, 8, wartoscZaklocenia);
+    sprzerzenie = new Sprzezenie(a, b, 1, Kp, Ti, Td, rodzajSygnalu, 8, wartoscZaklocenia);
 
     // Inicjalizacja serii danych
     seria = new QLineSeries();
@@ -19,12 +16,11 @@ RobieWykres::RobieWykres(JakiSygnal rodzajSygnalu,double wartoscZaklocenia, QWid
     // Tworzenie i uruchamianie timera
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &RobieWykres::aktualizacjawykresu);
-    timer->start(100); // Aktualizacja co 100 ms
+    timer->start(100); // Aktualizacja co 100 ms/zamienic na interwal
 }
 
 RobieWykres::~RobieWykres()
 {
-    delete regulPID;
     delete sprzerzenie;
 }
 

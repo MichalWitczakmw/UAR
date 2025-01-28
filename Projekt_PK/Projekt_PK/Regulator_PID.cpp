@@ -2,20 +2,20 @@
 
 double Regulator::ObliczSterowanie(double uchyb)
 {
-    double P = Kp * uchyb;
-    sumaUchybow += uchyb;
-    double I = Ti * sumaUchybow;
-    double D = Td * (uchyb - poprzedniUchyb);
-    poprzedniUchyb = uchyb;
+    double P = m_Kp * uchyb;
+    m_sumaUchybow += uchyb;
+    double I = m_Ti * m_sumaUchybow;
+    double D = m_Td * (uchyb - m_poprzedniUchyb);
+    m_poprzedniUchyb = uchyb;
 
     return P + I + D;
 }
 
 void Regulator::ResetPamieci()
 {
-    sumaUchybow = 0.0;
-    poprzedniUchyb = 0.0;
-    Kp = 0.0;
-    Ti = 0.0;
-    Td = 0.0;
+    m_sumaUchybow = 0.0;
+    m_poprzedniUchyb = 0.0;
+    m_Kp = 0.0;
+    m_Ti = 0.0;
+    m_Td = 0.0;
 }

@@ -17,10 +17,10 @@ double Sprzezenie::Symuluj(int i)
 
     // Obliczenie uchybu na podstawie wartoœci zadanej i wyjœcia modelu
     double aktualneWyjscie = model.ObliczWyjscie(wejscia, wyjscia);
-    double uchyb = wartoscZadana - aktualneWyjscie;
+    m_uchyb = m_wartoscZadana - aktualneWyjscie;
 
     // Sterowanie na podstawie uchybu
-    double sterowanie = regulator.ObliczSterowanie(uchyb);
+    double sterowanie = regulator.ObliczSterowanie(m_uchyb);
 
     // Modyfikacja wejœcia do modelu na podstawie sterowania
     double wejscieDoModelu = wejscie + sterowanie;
