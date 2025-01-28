@@ -14,7 +14,7 @@ class RobieWykres :public QWidget
     Q_OBJECT
 
 public:
-    explicit RobieWykres(JakiSygnal signalType, QWidget *parent = nullptr);
+    explicit RobieWykres(JakiSygnal rodzajSygnalu,double wartosczaklocenia, QWidget *parent = nullptr);
     ~RobieWykres();
 
 private slots:
@@ -26,7 +26,7 @@ private:
     QTimer *timer;              // Timer do aktualizacji
     Regulator *regulPID;        // Regulator
     Sprzezenie *sprzerzenie;    // Sprzężenie
-    int currentTime;            // Aktualny czas
+    int interwal;            // interwal
 
     void trzorzeniewykresu();          // Tworzy wykres
 };

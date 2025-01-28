@@ -69,9 +69,9 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QLabel" name="NazwaKI">
+        <widget class="QLabel" name="NazwaTI">
          <property name="text">
-          <string>KI</string>
+          <string>TI</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -79,7 +79,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QDoubleSpinBox" name="wartoscKI">
+        <widget class="QDoubleSpinBox" name="wartoscTI">
          <property name="singleStep">
           <double>0.010000000000000</double>
          </property>
@@ -90,9 +90,9 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QLabel" name="NazwaKD">
+        <widget class="QLabel" name="NazwaTD">
          <property name="text">
-          <string>KD</string>
+          <string>TD</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -100,7 +100,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QDoubleSpinBox" name="wartoscKD">
+        <widget class="QDoubleSpinBox" name="wartoscTD">
          <property name="singleStep">
           <double>0.010000000000000</double>
          </property>

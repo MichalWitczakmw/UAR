@@ -6,30 +6,31 @@
 class LosoweZaklocenie
 {
 private:
-    random_device rd;
-    mt19937 gen;
-    normal_distribution<double> dist;
+    random_device randomowo;
+    mt19937 generuj;
+    normal_distribution<double> dystrybucja;
 
 public:
-    LosoweZaklocenie(double mean = 0.0, double stddev = 1) : gen(rd()), dist(mean, stddev) {}
+    LosoweZaklocenie(double minimum, double maximum) : generuj(randomowo()), dystrybucja(minimum, maximum) {}
 
     double operator()()
     {
-        return dist(gen);
+        return dystrybucja(generuj);
     }
 };
 
 class ModelARX
 {
 private:
-    deque<double> aCoeffs;
-    deque<double> bCoeffs;
+    deque<double> m_Awsopoczynniki;
+    deque<double> m_Bwsopoczynniki;
     int delay;
     LosoweZaklocenie zaklocenie;
+    double m_maxZaklocenie = 1;
 
 public:
-    ModelARX(const deque<double>& a, const deque<double>& b, int delay)
-        : aCoeffs(a), bCoeffs(b), delay(delay), zaklocenie(0.0, 0.01) {}
+    ModelARX(const deque<double>& a, const deque<double>& b, int delay, double maxZaklocenie)
+        : m_Awsopoczynniki(a), m_Bwsopoczynniki(b), delay(delay), zaklocenie(0.0, maxZaklocenie) {}
 
     double ObliczWyjscie(const deque<double>& wejscia, const deque<double>& wyjscia);
 

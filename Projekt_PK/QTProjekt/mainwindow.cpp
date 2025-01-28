@@ -33,9 +33,10 @@ void MainWindow::on_OkienkoZapiszPlik_clicked()
 void MainWindow::on_StartWykresom_clicked()
 {
     // Tworzenie trzech okienek z wykresami
-    robwykreSkokowy = new RobieWykres(JakiSygnal::Skokowy, this);
-    robwykreSinusoidalny = new RobieWykres(JakiSygnal::Sinusoidalny, this);
-    robwykresProstokatny = new RobieWykres(JakiSygnal::Prostokatny, this);
+    //zamiast 1 to wartoscZaklocenia,
+    robwykreSkokowy = new RobieWykres(JakiSygnal::Skokowy, 1, this);
+    robwykreSinusoidalny = new RobieWykres(JakiSygnal::Sinusoidalny,1, this);
+    robwykresProstokatny = new RobieWykres(JakiSygnal::Prostokatny,1, this);
 
     ui->WykresSkokowy->setLayout(new QVBoxLayout);
     ui->WykresSinusoidalny->setLayout(new QVBoxLayout);
@@ -51,4 +52,5 @@ void MainWindow::on_StopWykresom_clicked()
 {
 
 }
+
 

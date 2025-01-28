@@ -1,17 +1,17 @@
 #include "Robie_Wykres.h"
 
-RobieWykres::RobieWykres(JakiSygnal signalType, QWidget *parent)
-    : QWidget(parent), currentTime(0)
+RobieWykres::RobieWykres(JakiSygnal rodzajSygnalu,double wartoscZaklocenia, QWidget *parent)
+    : QWidget(parent), interwal(0)
 {
     // Inicjalizacja regulatora i sprzężenia
     regulPID = new Regulator(0.5, 0.3, 0.1);
     std::deque<double> a = {0.4};
     std::deque<double> b = {0.6};
-    sprzerzenie = new Sprzezenie(a, b, 1, *regulPID, signalType, 8);
+    sprzerzenie = new Sprzezenie(a, b, 1, *regulPID, rodzajSygnalu, 8, wartoscZaklocenia);
 
     // Inicjalizacja serii danych
     seria = new QLineSeries();
-    seria->append(0, sprzerzenie->Symuluj(currentTime));
+    seria->append(0, sprzerzenie->Symuluj(interwal));
 
     // Tworzenie i konfiguracja wykresu
     trzorzeniewykresu();
@@ -47,15 +47,15 @@ void RobieWykres::trzorzeniewykresu()
 
 void RobieWykres::aktualizacjawykresu()
 {
-    currentTime++;
+    interwal++;
 
     // Symulacja nowej wartości
-    double newValue = sprzerzenie->Symuluj(currentTime);
-    seria->append(currentTime, newValue);
+    double newValue = sprzerzenie->Symuluj(interwal);
+    seria->append(interwal, newValue);
 
     // Utrzymywanie zakresu osi X
-    if (currentTime > 50) {
+    if (interwal > 50) {
         seria->remove(0);
-        chartview->chart()->axes(Qt::Horizontal).first()->setRange(currentTime - 50, currentTime);
+        chartview->chart()->axes(Qt::Horizontal).first()->setRange(interwal - 50, interwal);
     }
 }

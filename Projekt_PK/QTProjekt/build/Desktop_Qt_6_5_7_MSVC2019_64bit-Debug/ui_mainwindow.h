@@ -37,11 +37,11 @@ public:
     QLabel *NazwaKP;
     QDoubleSpinBox *wartoscKP;
     QHBoxLayout *horizontalLayout_2;
-    QLabel *NazwaKI;
-    QDoubleSpinBox *wartoscKI;
+    QLabel *NazwaTI;
+    QDoubleSpinBox *wartoscTI;
     QHBoxLayout *horizontalLayout_3;
-    QLabel *NazwaKD;
-    QDoubleSpinBox *wartoscKD;
+    QLabel *NazwaTD;
+    QDoubleSpinBox *wartoscTD;
     QHBoxLayout *horizontalLayout_10;
     QPushButton *StartWykresom;
     QPushButton *StopWykresom;
@@ -107,34 +107,34 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        NazwaKI = new QLabel(layoutWidget);
-        NazwaKI->setObjectName("NazwaKI");
-        NazwaKI->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        NazwaTI = new QLabel(layoutWidget);
+        NazwaTI->setObjectName("NazwaTI");
+        NazwaTI->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        horizontalLayout_2->addWidget(NazwaKI);
+        horizontalLayout_2->addWidget(NazwaTI);
 
-        wartoscKI = new QDoubleSpinBox(layoutWidget);
-        wartoscKI->setObjectName("wartoscKI");
-        wartoscKI->setSingleStep(0.010000000000000);
+        wartoscTI = new QDoubleSpinBox(layoutWidget);
+        wartoscTI->setObjectName("wartoscTI");
+        wartoscTI->setSingleStep(0.010000000000000);
 
-        horizontalLayout_2->addWidget(wartoscKI);
+        horizontalLayout_2->addWidget(wartoscTI);
 
 
         verticalLayout->addLayout(horizontalLayout_2);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName("horizontalLayout_3");
-        NazwaKD = new QLabel(layoutWidget);
-        NazwaKD->setObjectName("NazwaKD");
-        NazwaKD->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        NazwaTD = new QLabel(layoutWidget);
+        NazwaTD->setObjectName("NazwaTD");
+        NazwaTD->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        horizontalLayout_3->addWidget(NazwaKD);
+        horizontalLayout_3->addWidget(NazwaTD);
 
-        wartoscKD = new QDoubleSpinBox(layoutWidget);
-        wartoscKD->setObjectName("wartoscKD");
-        wartoscKD->setSingleStep(0.010000000000000);
+        wartoscTD = new QDoubleSpinBox(layoutWidget);
+        wartoscTD->setObjectName("wartoscTD");
+        wartoscTD->setSingleStep(0.010000000000000);
 
-        horizontalLayout_3->addWidget(wartoscKD);
+        horizontalLayout_3->addWidget(wartoscTD);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
@@ -210,8 +210,8 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         NazwaWyniku->setText(QCoreApplication::translate("MainWindow", "Wpisz wynik do uzyskania", nullptr));
         NazwaKP->setText(QCoreApplication::translate("MainWindow", "KP", nullptr));
-        NazwaKI->setText(QCoreApplication::translate("MainWindow", "KI", nullptr));
-        NazwaKD->setText(QCoreApplication::translate("MainWindow", "KD", nullptr));
+        NazwaTI->setText(QCoreApplication::translate("MainWindow", "TI", nullptr));
+        NazwaTD->setText(QCoreApplication::translate("MainWindow", "TD", nullptr));
         StartWykresom->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
         StopWykresom->setText(QCoreApplication::translate("MainWindow", "Stop", nullptr));
         OkienkoZapiszPlik->setText(QCoreApplication::translate("MainWindow", "Zapis do pliku", nullptr));

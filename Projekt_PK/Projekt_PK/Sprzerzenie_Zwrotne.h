@@ -19,8 +19,8 @@ private:
     double wartoscZadana;
 
 public:
-    Sprzezenie(const deque<double>& aCoeffs, const deque<double>& bCoeffs, int delay, Regulator& reg, JakiSygnal jakisygnal, double wartoscZadana)
-        : Generator(), model(aCoeffs, bCoeffs, delay), regulator(reg), sygnal(jakisygnal), wartoscZadana(wartoscZadana) {
+    Sprzezenie(const deque<double>& Awspoczynniki, const deque<double>& Bwspoczynniki, int delay, Regulator& reg, JakiSygnal jakisygnal, double wartoscZadana, double zaklocenieMax)
+        : Generator(), model(Awspoczynniki, Bwspoczynniki, delay, (zaklocenieMax/100)*wartoscZadana), regulator(reg), sygnal(jakisygnal), wartoscZadana(wartoscZadana) {
     }
 
     double Symuluj(int i);

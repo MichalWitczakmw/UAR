@@ -7,13 +7,13 @@ class Regulator
 {
 private:
     double Kp;
-    double Ki;
-    double Kd;
+    double Ti;
+    double Td;
     double sumaUchybow;
     double poprzedniUchyb;
 
 public:
-    Regulator(double kP, double kI, double kD) : Kp(kP), Ki(kI), Kd(kD), sumaUchybow(0.0), poprzedniUchyb(0.0) {}
+    Regulator(double kP, double TI, double TD) : Kp(kP), Ti(TI), Td(TD), sumaUchybow(0.0), poprzedniUchyb(0.0) {}
 
     double ObliczSterowanie(double uchyb);
 
