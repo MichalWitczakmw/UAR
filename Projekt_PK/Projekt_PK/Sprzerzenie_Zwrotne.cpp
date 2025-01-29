@@ -3,16 +3,17 @@
 double Sprzezenie::Symuluj(int i)
 {
     double wejscie;
+    static double czas=0;
     switch (sygnal)
     {
     case JakiSygnal::Sinusoidalny:
-        wejscie = SygnalSinusoidalny(6, 1.0, i);
+        wejscie = SygnalSinusoidalny(6, 1.0, czas);
         break;
     case JakiSygnal::Prostokatny:
-        wejscie = SygnalProstokatny(3, 0.5, 1.0, i);
+        wejscie = SygnalProstokatny(3, 0.5, 1.0, czas);
         break;
     default:
-        wejscie = SygnalSkokowy(5, 1.0, i);
+        wejscie = SygnalSkokowy(5, 1.0, czas);
     }
 
     // Obliczenie uchybu na podstawie wartoœci zadanej i wyjœcia modelu
@@ -32,6 +33,6 @@ double Sprzezenie::Symuluj(int i)
    // cout << "Czas: " << i << " s\n";
    // cout << "Wejscie (z generatora): " << wejscie << " Sterowanie: " << sterowanie
    //     << " Wejscie do modelu: " << wejscieDoModelu << " Wyjscie (z ARX): " << aktualneWyjscie << "\n";
-
+    czas +=i;
     return aktualneWyjscie;
 }

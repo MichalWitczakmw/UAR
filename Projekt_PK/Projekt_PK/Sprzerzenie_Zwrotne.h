@@ -45,9 +45,15 @@ public:
     double getPID_Kp() const {return regulator.getKp();}
     double getPID_Ti() const {return regulator.getTi();}
     double getPID_Td() const {return regulator.getTd();}
+    double getPID() const {return regulator.getPID();}
 
     //sprzerzenie
-    void setSprzerzenie();
+    void setSprzerzenie(deque<double> a,deque<double> b,double Kp,double Ti, double Td,JakiSygnal rodzajSygnalu,double zadana,double wartosczaklocenia)
+    {
+        setPID(Kp,Ti,Td);
+        setARX(1,1);
+        m_wartoscZadana = zadana;
+    }
     double getuchyb() const {return m_uchyb;}
 
 

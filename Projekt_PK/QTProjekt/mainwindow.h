@@ -8,10 +8,6 @@
 #include <QTimer>
 
 
-#include "../Projekt_PK/Generator_Sygnalow.h"
-#include "../Projekt_PK/Model_ARX.h"
-#include "../Projekt_PK/Regulator_PID.h"
-#include "../Projekt_PK/Sprzerzenie_Zwrotne.h"
 #include "../Projekt_PK/Robie_Wykres.h"
 
 QT_BEGIN_NAMESPACE
@@ -27,7 +23,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    void aktualizujWartosciObliczonejLayout();
+    void aktualizujUchybLayout();
+    void aktualizujRegulatorLayout();
 private slots:
     void on_ZakonczProgram_clicked();
 
@@ -35,29 +33,39 @@ private slots:
 
     void on_StartWykresom_clicked();
 
-    void on_StopWykresom_clicked();
-
     void on_Reset_clicked();
+
+    void on_StopWykresom_clicked();
 
 private:
     Ui::MainWindow *ui;
-    Sprzezenie * sprzerzenieZwrotne;
-    Regulator * regulPID;
-    ModelARX * modelARX;
-    Generator * generatorSygnalow;
-    QLineSeries * seria;
-    QChart * chart;
-    QChartView * chartview;
-    QTimer *timer;
-    RobieWykres * wykresWartosciWyjsciowej;
-    RobieWykres * wykresUchybu;
-    RobieWykres *  wykresRegulatoraPID;
+    //Sprzezenie * sprzerzenieZwrotne;
+    //Regulator * regulPID;
+    //ModelARX * modelARX;
+    //Generator * generatorSygnalow;
+
+    QLineSeries * seria = nullptr;
+    QLineSeries * seriaWartosciZadanej = nullptr;
+
+    QChart * chart = nullptr;
+    QChartView * chartview = nullptr;
+    QTimer *timer = nullptr;
+
+    RobieWykres * wykresy = nullptr;
+    //RobieWykres * wykresWartosciWyjsciowej = nullptr;
+    //RobieWykres * wykresUchyb = nullptr;
+    //RobieWykres *  wykresRegulatoraPID = nullptr;
+
     deque<double> a = {0.6};
     deque<double> b = {0.4};
+
     double Kp =1;
     double Ti = 0.5;
     double Td = 0.4;
-    double wartoscZadana;
-    double wartoscZaklocenia;
+
+    double wartoscZadana = 10;
+    double wartoscZaklocenia = 1;
+
+    bool niebylo= true;
 };
 #endif // MAINWINDOW_H

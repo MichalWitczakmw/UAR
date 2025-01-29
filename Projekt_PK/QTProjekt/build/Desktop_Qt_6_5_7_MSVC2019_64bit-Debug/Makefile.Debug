@@ -2362,7 +2362,8 @@ debug\Sprzerzenie_Zwrotne.obj: ..\..\..\Projekt_PK\Sprzerzenie_Zwrotne.cpp ..\..
 		..\..\..\Projekt_PK\Regulator_PID.h \
 		..\..\..\Projekt_PK\Model_ARX.h
 
-debug\Zapisze_Do_Pliku.obj: ..\..\..\Projekt_PK\Zapisze_Do_Pliku.cpp ..\..\..\Projekt_PK\Zapisze_Do_Pliku.h
+debug\Zapisze_Do_Pliku.obj: ..\..\..\Projekt_PK\Zapisze_Do_Pliku.cpp ..\..\..\Projekt_PK\Zapisze_Do_Pliku.h \
+		..\..\..\Projekt_PK\Main_Projektu.h
 
 debug\main.obj: ..\..\main.cpp ..\..\mainwindow.h \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QMainWindow \
@@ -3191,6 +3192,9 @@ debug\main_Okno_Zapisu.obj: ..\..\main_Okno_Zapisu.cpp ..\..\main_Okno_Zapisu.h 
 		C:\Qt\6.5.7\msvc2019_64\include\QtGui\qinputmethod.h \
 		C:\Qt\6.5.7\msvc2019_64\include\QtCore\qlocale.h \
 		C:\Qt\6.5.7\msvc2019_64\include\QtGui\qguiapplication_platform.h \
+		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QCheckBox \
+		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\qcheckbox.h \
+		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QHBoxLayout \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\qboxlayout.h \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\qlayout.h \
@@ -3209,7 +3213,6 @@ debug\main_Okno_Zapisu.obj: ..\..\main_Okno_Zapisu.cpp ..\..\main_Okno_Zapisu.h 
 		C:\Qt\6.5.7\msvc2019_64\include\QtGui\qtextoption.h \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QPushButton \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QWidget
 
 debug\mainwindow.obj: ..\..\mainwindow.cpp ..\..\mainwindow.h \
@@ -3858,11 +3861,11 @@ debug\mainwindow.obj: ..\..\mainwindow.cpp ..\..\mainwindow.h \
 		C:\Qt\6.5.7\msvc2019_64\include\QtCharts\QChartView \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QApplication \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QDoubleSpinBox \
-		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QFormLayout \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QHBoxLayout \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QLabel \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QMenuBar \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QPushButton \
+		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QSpinBox \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QStatusBar \
 		C:\Qt\6.5.7\msvc2019_64\include\QtWidgets\QVBoxLayout \
 		..\..\main_Okno_Zapisu.h \

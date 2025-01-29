@@ -11,7 +11,7 @@ private:
     normal_distribution<double> dystrybucja;
 
 public:
-    LosoweZaklocenie() : generuj(randomowo()), dystrybucja(0, 1) {}
+    LosoweZaklocenie() : generuj(randomowo()), dystrybucja(0, 0.1) {}
 
     double operator()()
     {

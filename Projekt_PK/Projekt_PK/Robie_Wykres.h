@@ -5,37 +5,47 @@
 #include <QWidget>
 #include <deque>
 #include "Sprzerzenie_Zwrotne.h"
-#include "Regulator_PID.h"
 
-
-
-class RobieWykres :public QWidget
+class RobieWykres : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit RobieWykres(deque<double> a,deque<double> b,double Kp,double Ti, double Td,JakiSygnal rodzajSygnalu,double wartosczaklocenia, QWidget *parent = nullptr);
+    explicit RobieWykres(deque<double> a, deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double Zadana, double wartosczaklocenia, int wartoscinterwalu, QWidget *parent = nullptr);
     ~RobieWykres();
 
-    double getSprzerzenieModelARX_zaklocenie()const  { return static_cast<double>(sprzerzenie->getModelARX_zaklocenie());}
-    double getSprzerzenieUchyb() const {return static_cast<double>(sprzerzenie->getuchyb());}
+    QChartView* getChartViewWartosciObliczonej() { return chartviewWartosci; }
+    QChartView* getChartViewUchybu() { return chartviewUchybu; }
+    QChartView* getChartViewRegulatora() { return chartviewRegulatora; }
 
-    void Resetuj()
-    {
-        sprzerzenie->ResetujPamiec();
-    }
+    void setNoweWartosciWykresu(deque<double> a, deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double zadana, double wartosczaklocenia);
+    void setTimerStop(bool stopuj);
+    void Resetuj();
 
-private slots:
-    void aktualizacjawykresu(); // Aktualizuje wykres
+public slots:
+    void aktualizacjawykresu();
 
 private:
-    QLineSeries *seria;         // Seria danych
-    QChartView *chartview;      // Widok wykresu
-    QTimer *timer;              // Timer do aktualizacji
-    Sprzezenie * sprzerzenie;    // Sprzężenie
-    int interwal;            // interwal
+    QLineSeries *seriaWartosciObliczonej;
+    QLineSeries *seriaWartosciZadanej;
+    QLineSeries *seriaUchybu;
+    QLineSeries *seriaPID;
 
-    void trzorzeniewykresu();          // Tworzy wykres
+    QChart *chartWartosciObliczonej;
+    QChart *chartUchybu;
+    QChart *chartRegulacji;
+
+    QChartView *chartviewWartosci;
+    QChartView *chartviewUchybu;
+    QChartView *chartviewRegulatora;
+
+    QTimer *timer;
+    Sprzezenie *sprzerzenie;
+    int interwal;
+    double m_WartoscZadana;
+    int terazczas;
+
+    void inicjalizujWykres();
 };
 
 #endif // ROBIE_WYKRES_H

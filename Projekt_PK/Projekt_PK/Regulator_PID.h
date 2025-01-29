@@ -32,6 +32,7 @@ public:
     double getKp() const {return m_Kp;}
     double getTi() const {return m_Ti;}
     double getTd() const {return m_Td;}
+    double getPID() const {return m_Kp+m_Ti+m_Td;}
 };
 
 #endif // !REGULATOR_PID_H
