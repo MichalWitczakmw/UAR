@@ -4,23 +4,24 @@
 #include <QtCharts>
 #include <QWidget>
 #include <deque>
-#include "Sprzerzenie_Zwrotne.h"
+#include "../Projekt_PK/Sprzerzenie_Zwrotne.h"
 
 class RobieWykres : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit RobieWykres(deque<double> a, deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double Zadana, double wartosczaklocenia, int wartoscinterwalu, QWidget *parent = nullptr);
+    explicit RobieWykres(std::deque<double> a, std::deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double Zadana, double wartosczaklocenia, int wartoscinterwalu, QWidget *parent = nullptr);
     ~RobieWykres();
 
-    QChartView* getChartViewWartosciObliczonej() { return chartviewWartosci; }
-    QChartView* getChartViewUchybu() { return chartviewUchybu; }
-    QChartView* getChartViewRegulatora() { return chartviewRegulatora; }
+    QChartView* getChartViewWartosciObliczonej();
+    QChartView* getChartViewUchybu();
+    QChartView* getChartViewRegulatora();
 
-    void setNoweWartosciWykresu(deque<double> a, deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double zadana, double wartosczaklocenia);
+    void setNoweWartosciWykresu(std::deque<double> a, std::deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double zadana, double wartosczaklocenia);
     void setTimerStop(bool stopuj);
     void Resetuj();
+    void resetCzasu();
 
 public slots:
     void aktualizacjawykresu();

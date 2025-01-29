@@ -2,10 +2,8 @@
 #include "ui_mainwindow.h"
 #include "main_Okno_Zapisu.h"
 
-
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 }
@@ -13,16 +11,15 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-
-    if(wykresy !=nullptr)
+    if (wykresy != nullptr) {
         delete wykresy;
+    }
 }
 
 void MainWindow::on_ZakonczProgram_clicked()
 {
     this->close();
 }
-
 
 void MainWindow::on_OkienkoZapiszPlik_clicked()
 {
@@ -41,7 +38,6 @@ void MainWindow::aktualizujWartosciObliczonejLayout()
     } else {
         qDebug() << "Błąd: wykres jest nullptr!";
     }
-
 }
 
 void MainWindow::aktualizujUchybLayout()
@@ -70,7 +66,7 @@ void MainWindow::aktualizujRegulatorLayout()
 
 void MainWindow::on_StartWykresom_clicked()
 {
-    //przyjecie wartosci
+    // Przyjęcie wartości
     wartoscZadana = ui->wartoscWynik->value();
     Kp = ui->wartoscKP->value();
     Ti = ui->wartoscTI->value();
@@ -94,7 +90,6 @@ void MainWindow::on_StartWykresom_clicked()
     aktualizujWartosciObliczonejLayout();
     aktualizujUchybLayout();
     aktualizujRegulatorLayout();
-
 }
 
 void MainWindow::on_Reset_clicked()
@@ -105,9 +100,6 @@ void MainWindow::on_Reset_clicked()
 
 void MainWindow::on_StopWykresom_clicked()
 {
-    if(wykresy)
+    if (wykresy)
         wykresy->setTimerStop(true);
 }
-
-
-

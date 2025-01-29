@@ -1,7 +1,7 @@
 #include "Robie_Wykres.h"
 
-RobieWykres::RobieWykres(deque<double> a, deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double Zadana, double wartoscZaklocenia, int wartoscinterwalu, QWidget *parent)
-    : QWidget(parent), interwal(wartoscinterwalu), m_WartoscZadana(Zadana)
+RobieWykres::RobieWykres(std::deque<double> a, std::deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double Zadana, double wartoscZaklocenia, int wartoscinterwalu, QWidget *parent)
+    : QWidget(parent), interwal(wartoscinterwalu), m_WartoscZadana(Zadana), terazczas(0)
 {
     sprzerzenie = new Sprzezenie(a, b, 1, Kp, Ti, Td, rodzajSygnalu, m_WartoscZadana, wartoscZaklocenia);
 
@@ -47,7 +47,19 @@ RobieWykres::~RobieWykres()
     delete timer;
 }
 
-void RobieWykres::setNoweWartosciWykresu(deque<double> a, deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double zadana, double wartosczaklocenia)
+QChartView* RobieWykres::getChartViewWartosciObliczonej() {
+    return chartviewWartosci;
+}
+
+QChartView* RobieWykres::getChartViewUchybu() {
+    return chartviewUchybu;
+}
+
+QChartView* RobieWykres::getChartViewRegulatora() {
+    return chartviewRegulatora;
+}
+
+void RobieWykres::setNoweWartosciWykresu(std::deque<double> a, std::deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double zadana, double wartosczaklocenia)
 {
     sprzerzenie->setSprzerzenie(a, b, Kp, Ti, Td, rodzajSygnalu, zadana, wartosczaklocenia);
     m_WartoscZadana = zadana;
@@ -55,6 +67,12 @@ void RobieWykres::setNoweWartosciWykresu(deque<double> a, deque<double> b, doubl
     seriaWartosciZadanej->clear();
     seriaUchybu->clear();
     seriaPID->clear();
+    resetCzasu();
+}
+
+void RobieWykres::resetCzasu()
+{
+    terazczas = 0;
 }
 
 void RobieWykres::setTimerStop(bool stopuj)
@@ -68,6 +86,7 @@ void RobieWykres::setTimerStop(bool stopuj)
 void RobieWykres::Resetuj()
 {
     sprzerzenie->ResetujPamiec();
+    resetCzasu();
 }
 
 void RobieWykres::inicjalizujWykres()
@@ -81,17 +100,17 @@ void RobieWykres::inicjalizujWykres()
     chartWartosciObliczonej->addSeries(seriaWartosciObliczonej);
     chartWartosciObliczonej->addSeries(seriaWartosciZadanej);
     chartWartosciObliczonej->createDefaultAxes();
-    chartWartosciObliczonej->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana/2), (m_WartoscZadana*1.5));
+    chartWartosciObliczonej->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
     chartWartosciObliczonej->axes(Qt::Horizontal).first()->setRange(0, 100);
 
     chartUchybu->addSeries(seriaUchybu);
     chartUchybu->createDefaultAxes();
-    chartUchybu->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana/2), (m_WartoscZadana*1.5));
+    chartUchybu->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
     chartUchybu->axes(Qt::Horizontal).first()->setRange(0, 100);
 
     chartRegulacji->addSeries(seriaPID);
     chartRegulacji->createDefaultAxes();
-    chartRegulacji->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana/2), (m_WartoscZadana*1.5));
+    chartRegulacji->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
     chartRegulacji->axes(Qt::Horizontal).first()->setRange(0, 100);
 
     // Ustawienie tytułów osi
