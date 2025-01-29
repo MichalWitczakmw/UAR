@@ -39,10 +39,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    //Sprzezenie * sprzerzenieZwrotne;
-    //Regulator * regulPID;
-    //ModelARX * modelARX;
-    //Generator * generatorSygnalow;
 
     QLineSeries * seria = nullptr;
     QLineSeries * seriaWartosciZadanej = nullptr;
@@ -52,9 +48,6 @@ private:
     QTimer *timer = nullptr;
 
     RobieWykres * wykresy = nullptr;
-    //RobieWykres * wykresWartosciWyjsciowej = nullptr;
-    //RobieWykres * wykresUchyb = nullptr;
-    //RobieWykres *  wykresRegulatoraPID = nullptr;
 
     deque<double> a = {0.6};
     deque<double> b = {0.4};

@@ -26,6 +26,9 @@ public slots:
     void aktualizacjawykresu();
 
 private:
+    void inicjalizujWykres();
+    void addAxisTitle(QChart *chart, const QString &xTitle, const QString &yTitle);
+
     QLineSeries *seriaWartosciObliczonej;
     QLineSeries *seriaWartosciZadanej;
     QLineSeries *seriaUchybu;
@@ -44,8 +47,6 @@ private:
     int interwal;
     double m_WartoscZadana;
     int terazczas;
-
-    void inicjalizujWykres();
 };
 
 #endif // ROBIE_WYKRES_H

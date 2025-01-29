@@ -10,6 +10,11 @@ RobieWykres::RobieWykres(deque<double> a, deque<double> b, double Kp, double Ti,
     seriaUchybu = new QLineSeries();
     seriaPID = new QLineSeries();
 
+    seriaWartosciObliczonej->setName("Wartość Obliczona");
+    seriaWartosciZadanej->setName("Wartość Zadana");
+    seriaUchybu->setName("Uchyb");
+    seriaPID->setName("Sterowanie PID");
+
     chartWartosciObliczonej = new QChart();
     chartUchybu = new QChart();
     chartRegulacji = new QChart();
@@ -88,6 +93,38 @@ void RobieWykres::inicjalizujWykres()
     chartRegulacji->createDefaultAxes();
     chartRegulacji->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana/2), (m_WartoscZadana*1.5));
     chartRegulacji->axes(Qt::Horizontal).first()->setRange(0, 100);
+
+    // Ustawienie tytułów osi
+    addAxisTitle(chartWartosciObliczonej, "czas", "Wartość");
+    addAxisTitle(chartUchybu, "czas", "Wartość");
+    addAxisTitle(chartRegulacji, "czas", "Wartość");
+
+    // Dodanie legendy
+    chartWartosciObliczonej->legend()->setVisible(true);
+    chartWartosciObliczonej->legend()->setAlignment(Qt::AlignBottom);
+    chartUchybu->legend()->setVisible(true);
+    chartUchybu->legend()->setAlignment(Qt::AlignBottom);
+    chartRegulacji->legend()->setVisible(true);
+    chartRegulacji->legend()->setAlignment(Qt::AlignBottom);
+
+    // Dodanie czarnej obwódki do legendy
+    for (QLegendMarker* marker : chartWartosciObliczonej->legend()->markers()) {
+        marker->setLabelBrush(QBrush(Qt::black));
+        marker->setBrush(QBrush(Qt::NoBrush));
+        marker->setPen(QPen(Qt::black));
+    }
+
+    for (QLegendMarker* marker : chartUchybu->legend()->markers()) {
+        marker->setLabelBrush(QBrush(Qt::black));
+        marker->setBrush(QBrush(Qt::NoBrush));
+        marker->setPen(QPen(Qt::black));
+    }
+
+    for (QLegendMarker* marker : chartRegulacji->legend()->markers()) {
+        marker->setLabelBrush(QBrush(Qt::black));
+        marker->setBrush(QBrush(Qt::NoBrush));
+        marker->setPen(QPen(Qt::black));
+    }
 }
 
 void RobieWykres::aktualizacjawykresu()
@@ -120,4 +157,26 @@ void RobieWykres::aktualizacjawykresu()
     chartviewWartosci->chart()->update();
     chartviewUchybu->chart()->update();
     chartviewRegulatora->chart()->update();
+}
+
+void RobieWykres::addAxisTitle(QChart *chart, const QString &xTitle, const QString &yTitle)
+{
+    QValueAxis *axisX = qobject_cast<QValueAxis *>(chart->axes(Qt::Horizontal).first());
+    QValueAxis *axisY = qobject_cast<QValueAxis *>(chart->axes(Qt::Vertical).first());
+
+    if (axisX) {
+        QGraphicsTextItem *xAxisTitle = new QGraphicsTextItem(xTitle);
+        xAxisTitle->setFont(QFont("Arial", 10, QFont::Bold));
+        xAxisTitle->setDefaultTextColor(Qt::black);
+        chart->scene()->addItem(xAxisTitle);
+        xAxisTitle->setPos(chart->plotArea().right() - xAxisTitle->boundingRect().width(), chart->plotArea().bottom() + 20);
+    }
+
+    if (axisY) {
+        QGraphicsTextItem *yAxisTitle = new QGraphicsTextItem(yTitle);
+        yAxisTitle->setFont(QFont("Arial", 10, QFont::Bold));
+        yAxisTitle->setDefaultTextColor(Qt::black);
+        chart->scene()->addItem(yAxisTitle);
+        yAxisTitle->setPos(chart->plotArea().left() - yAxisTitle->boundingRect().width() - 20, chart->plotArea().top() - yAxisTitle->boundingRect().height());
+    }
 }

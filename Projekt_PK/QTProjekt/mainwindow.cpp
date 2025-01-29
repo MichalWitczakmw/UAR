@@ -13,23 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-    /*
-    if (wykresWartosciWyjsciowej)
-    {
-        delete wykresWartosciWyjsciowej;
-        wykresWartosciWyjsciowej = nullptr;
-    }
-    if (wykresUchyb)
-    {
-        delete wykresUchyb;
-        wykresUchyb = nullptr;
-    }
-    if (wykresRegulatoraPID)
-    {
-        delete wykresRegulatoraPID;
-        wykresRegulatoraPID = nullptr;
-    }
-*/
+
     if(wykresy !=nullptr)
         delete wykresy;
 }
@@ -110,80 +94,7 @@ void MainWindow::on_StartWykresom_clicked()
     aktualizujWartosciObliczonejLayout();
     aktualizujUchybLayout();
     aktualizujRegulatorLayout();
-    /*
-    if(niebylo)
-    {
-    // Tworzenie trzech okienek z wykresami
-    wykresWartosciWyjsciowej = new RobieWykres(a,b,Kp,Ti,Td,JakiSygnal::Prostokatny,wartoscZadana, wartoscZaklocenia,100, this);
 
-    if(wykresWartosciWyjsciowej)
-        wykresWartosciWyjsciowej->setTimerStop(false);
-    wykresUchyb = wykresWartosciWyjsciowej;
-
-    ui->WykresWartosciZO->setLayout(new QVBoxLayout);
-    ui->WykresUchybu->setLayout(new QVBoxLayout);
-    //ui->WykresPID->setLayout(new QVBoxLayout);
-    niebylo = false;
-    }
-
-    if (niebylo) {
-        wykresWartosciWyjsciowej = new RobieWykres(a, b, Kp, Ti, Td, JakiSygnal::Prostokatny, wartoscZadana, wartoscZaklocenia, 100, this);
-
-        ui->WykresWartosciZO->setLayout(new QVBoxLayout);
-        ui->WykresUchybu->setLayout(new QVBoxLayout);
-        ui->WykresPID->setLayout(new QVBoxLayout);
-
-        ui->WykresWartosciZO->layout()->addWidget(wykresWartosciWyjsciowej->getChartViewWartosciObliczonej());
-        ui->WykresUchybu->layout()->addWidget(wykresWartosciWyjsciowej->getChartViewUchybu());
-        ui->WykresPID->layout()->addWidget(wykresWartosciWyjsciowej->getChartViewRegulatora());
-
-        niebylo = false;
-    }
-    if (ui->WykresWartosciZO->layout()->count() == 0) {
-        ui->WykresWartosciZO->layout()->addWidget(wykresWartosciWyjsciowej);
-    }
-    ui->WykresUchybu->layout()->addWidget(wykresUchyb);
-    //ui->WykresProstokatny->layout()->addWidget( wykresRegulatoraPID);
-    //this->replot()
-    wykresWartosciWyjsciowej->aktualizacjawykresu();
-    wykresWartosciWyjsciowej->setNoweWartosciWykresu(a,b,Kp,Ti,Td,JakiSygnal::Prostokatny,wartoscZadana,wartoscZaklocenia);
-    if(wykresWartosciWyjsciowej)
-    {
-        wykresWartosciWyjsciowej->setTimerStop(false);
-    }
-
-    if (!wykresWartosciWyjsciowej) {
-        wykresWartosciWyjsciowej = new RobieWykres(a, b, Kp, Ti, Td, JakiSygnal::Prostokatny, wartoscZadana, wartoscZaklocenia, 100, this);
-
-        //ui->WykresUchybu->setLayout(new QVBoxLayout);
-        //ui->WykresPID->setLayout(new QVBoxLayout);
-
-        if (!ui->WykresWartosciZO->layout())
-            ui->WykresWartosciZO->setLayout(new QVBoxLayout);
-        ui->WykresWartosciZO->layout()->addWidget(wykresWartosciWyjsciowej->getChartViewWartosciObliczonej());
-        if (!ui->WykresUchybu->layout())
-            ui->WykresUchybu->setLayout(new QVBoxLayout);
-        ui->WykresUchybu->layout()->addWidget(wykresWartosciWyjsciowej->getChartViewWartosciObliczonej());
-        if (!ui->WykresPID->layout())
-            ui->WykresPID->setLayout(new QVBoxLayout);
-        ui->WykresPID->layout()->addWidget(wykresWartosciWyjsciowej->getChartViewWartosciObliczonej());
-        //ui->WykresUchybu->layout()->addWidget(wykresWartosciWyjsciowej->getChartViewUchybu());
-        //ui->WykresPID->layout()->addWidget(wykresWartosciWyjsciowej->getChartViewRegulatora());
-    }
-
-    // Jeśli instancja nie istnieje, tworzę ją
-    if (!wykresWartosciWyjsciowej) {
-        wykresWartosciWyjsciowej = new RobieWykres(a, b, Kp, Ti, Td, JakiSygnal::Prostokatny, wartoscZadana, wartoscZaklocenia, 100, this);
-    }
-    // Aktualizacja wartości
-    wykresWartosciWyjsciowej->setNoweWartosciWykresu(a, b, Kp, Ti, Td, JakiSygnal::Prostokatny, wartoscZadana, wartoscZaklocenia);
-    wykresWartosciWyjsciowej->setTimerStop(false);
-
-    // Aktualizacja layoutów
-    aktualizujWartosciObliczonejLayout();
-    aktualizujUchybLayout();
-    aktualizujRegulatorLayout();
-    */
 }
 
 void MainWindow::on_Reset_clicked()
