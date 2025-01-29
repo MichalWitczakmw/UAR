@@ -114,8 +114,13 @@ void RobieWykres::inicjalizujWykres()
     chartRegulacji->axes(Qt::Horizontal).first()->setRange(0, 100);
 
     // Ustawienie tytułów osi
+    chartWartosciObliczonej->title().append("Wykres wartosci");
     addAxisTitle(chartWartosciObliczonej, "czas", "Wartość");
+
+    chartUchybu->title().append("Wykres Uchybu");
     addAxisTitle(chartUchybu, "czas", "Wartość");
+
+    chartRegulacji->title().append("Wykres PID");
     addAxisTitle(chartRegulacji, "czas", "Wartość");
 
     // Dodanie legendy
@@ -169,8 +174,13 @@ void RobieWykres::aktualizacjawykresu()
             seriaPID->remove(0);
 
         chartviewWartosci->chart()->axes(Qt::Horizontal).first()->setRange(qMax(0, terazczas - 50), terazczas);
+        chartWartosciObliczonej->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
+
         chartviewUchybu->chart()->axes(Qt::Horizontal).first()->setRange(qMax(0, terazczas - 50), terazczas);
+        chartUchybu->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
+
         chartviewRegulatora->chart()->axes(Qt::Horizontal).first()->setRange(qMax(0, terazczas - 50), terazczas);
+        chartRegulacji->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
     }
 
     chartviewWartosci->chart()->update();
