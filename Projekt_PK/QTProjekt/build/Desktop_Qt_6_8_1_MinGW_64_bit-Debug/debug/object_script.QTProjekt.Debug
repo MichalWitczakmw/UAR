@@ -1,0 +1,12 @@
+debug/Generator_Sygnalow.o
+debug/Model_ARX.o
+debug/Regulator_PID.o
+debug/Robie_Wykres.o
+debug/Sprzerzenie_Zwrotne.o
+debug/Zapisze_Do_Pliku.o
+debug/main.o
+debug/main_Okno_Zapisu.o
+debug/mainwindow.o
+debug/moc_Robie_Wykres.o
+debug/moc_main_Okno_Zapisu.o
+debug/moc_mainwindow.o

@@ -1,0 +1,12 @@
+release/Generator_Sygnalow.o
+release/Model_ARX.o
+release/Regulator_PID.o
+release/Robie_Wykres.o
+release/Sprzerzenie_Zwrotne.o
+release/Zapisze_Do_Pliku.o
+release/main.o
+release/main_Okno_Zapisu.o
+release/mainwindow.o
+release/moc_Robie_Wykres.o
+release/moc_main_Okno_Zapisu.o
+release/moc_mainwindow.o
