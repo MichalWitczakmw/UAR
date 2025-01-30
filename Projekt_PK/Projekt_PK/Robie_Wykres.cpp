@@ -1,9 +1,11 @@
 #include "Robie_Wykres.h"
 
-RobieWykres::RobieWykres(std::deque<double> a, std::deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double Zadana, double wartoscZaklocenia, int wartoscinterwalu, QWidget *parent)
+RobieWykres::RobieWykres(std::deque<double> a, std::deque<double> b, double Kp, double Ti, double Td,int wnastawa, JakiSygnal rodzajSygnalu, double Zadana, double wartoscZaklocenia, int wartoscinterwalu, QWidget *parent)
     : QWidget(parent), interwal(wartoscinterwalu), m_WartoscZadana(Zadana), terazczas(0)
 {
     sprzerzenie = new Sprzezenie(a, b, 1, Kp, Ti, Td, rodzajSygnalu, m_WartoscZadana, wartoscZaklocenia);
+
+    nastawa = wnastawa;
 
     seriaWartosciObliczonej = new QLineSeries();
     seriaWartosciZadanej = new QLineSeries();
@@ -13,8 +15,26 @@ RobieWykres::RobieWykres(std::deque<double> a, std::deque<double> b, double Kp, 
     seriaWartosciObliczonej->setName("Wartość Obliczona");
     seriaWartosciZadanej->setName("Wartość Zadana");
     seriaUchybu->setName("Uchyb");
+    /*
+    switch (nastawa) {
+    case 1:
+        seriaPID->setName("Nastawa P");
+        break;
+    case 2:
+        seriaPID->setName("Nastawa I");
+        break;
+    case 3:
+        seriaPID->setName("Nastawa D");
+        break;
+    case 4:
+        seriaPID->setName("Sterowanie PID");
+        break;
+    default:
+        seriaPID->setName("Sterowanie PID");
+        break;
+    }
+    */
     seriaPID->setName("Sterowanie PID");
-
     chartWartosciObliczonej = new QChart();
     chartUchybu = new QChart();
     chartRegulacji = new QChart();
@@ -59,8 +79,27 @@ QChartView* RobieWykres::getChartViewRegulatora() {
     return chartviewRegulatora;
 }
 
-void RobieWykres::setNoweWartosciWykresu(std::deque<double> a, std::deque<double> b, double Kp, double Ti, double Td, JakiSygnal rodzajSygnalu, double zadana, double wartosczaklocenia)
+void RobieWykres::setInterwal(int warinterwal)
 {
+    if(warinterwal>interwal && warinterwal<1000)
+        interwal=warinterwal;
+    else
+        interwal = 100;
+}
+
+void RobieWykres::setNoweWartosciWykresu(std::deque<double> a, std::deque<double> b, double Kp, double Ti, double Td,int wnastawa, JakiSygnal rodzajSygnalu, double zadana, double wartosczaklocenia, int warinterwal)
+{
+    qDebug() << "Ustawianie nowych wartości: "
+             << "a:" << &a
+             << "b:" << &b
+             << "Kp:" << Kp
+             << "Ti:" << Ti
+             << "Td:" << Td
+             << "rodzajSygnalu:" << &rodzajSygnalu
+             << "zadana:" << zadana
+             << "wartosczaklocenia:" << wartosczaklocenia
+             << "warinterwal:" << warinterwal;
+
     sprzerzenie->setSprzerzenie(a, b, Kp, Ti, Td, rodzajSygnalu, zadana, wartosczaklocenia);
     m_WartoscZadana = zadana;
     seriaWartosciObliczonej->clear();
@@ -68,6 +107,24 @@ void RobieWykres::setNoweWartosciWykresu(std::deque<double> a, std::deque<double
     seriaUchybu->clear();
     seriaPID->clear();
     resetCzasu();
+    setInterwal(warinterwal); // Aktualizacja interwału
+    /*
+    nastawa = wnastawa;
+    switch (nastawa) {
+    case 1:
+        regulator = sprzerzenie->getPID_Kp();
+        break;
+    case 2:
+        regulator = sprzerzenie->getPID_Ti();
+    case 3:
+        regulator = sprzerzenie->getPID_Td();
+    case 4:
+        regulator = sprzerzenie->getPID();
+    default:
+        regulator = sprzerzenie->getPID();
+        break;
+    }
+    */
 }
 
 void RobieWykres::resetCzasu()
@@ -87,6 +144,21 @@ void RobieWykres::Resetuj()
 {
     sprzerzenie->ResetujPamiec();
     resetCzasu();
+
+    // Resetowanie wartości do domyślnych ustawień
+    seriaWartosciObliczonej->clear();
+    seriaWartosciZadanej->clear();
+    seriaUchybu->clear();
+    seriaPID->clear();
+
+    m_WartoscZadana = 10;
+    // Zaktualizuj zakresy osi pionowej
+    chartWartosciObliczonej->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
+    chartUchybu->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
+    chartRegulacji->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
+
+    // Resetowanie interwału
+    setInterwal(100);
 }
 
 void RobieWykres::inicjalizujWykres()
@@ -102,25 +174,28 @@ void RobieWykres::inicjalizujWykres()
     chartWartosciObliczonej->createDefaultAxes();
     chartWartosciObliczonej->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
     chartWartosciObliczonej->axes(Qt::Horizontal).first()->setRange(0, 100);
+    chartWartosciObliczonej->setTitle("Wykres Symulacji");
 
     chartUchybu->addSeries(seriaUchybu);
     chartUchybu->createDefaultAxes();
     chartUchybu->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
     chartUchybu->axes(Qt::Horizontal).first()->setRange(0, 100);
+    chartUchybu->setTitle("Wykres Uchybu");
 
     chartRegulacji->addSeries(seriaPID);
     chartRegulacji->createDefaultAxes();
     chartRegulacji->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
     chartRegulacji->axes(Qt::Horizontal).first()->setRange(0, 100);
+    chartRegulacji->setTitle("Wykres Regulatora");
 
     // Ustawienie tytułów osi
-    chartWartosciObliczonej->title().append("Wykres wartosci");
+    //chartWartosciObliczonej->title().append("Wykres wartosci");
     addAxisTitle(chartWartosciObliczonej, "czas", "Wartość");
 
-    chartUchybu->title().append("Wykres Uchybu");
+    //chartUchybu->title().append("Wykres Uchybu");
     addAxisTitle(chartUchybu, "czas", "Wartość");
 
-    chartRegulacji->title().append("Wykres PID");
+    //chartRegulacji->title().append("Wykres PID");
     addAxisTitle(chartRegulacji, "czas", "Wartość");
 
     // Dodanie legendy
@@ -156,7 +231,22 @@ void RobieWykres::aktualizacjawykresu()
     terazczas++;
     double newValue = sprzerzenie->Symuluj(terazczas);
     double uchyb = sprzerzenie->getuchyb();
-    double regulator = sprzerzenie->getPID();
+    /*
+    switch (nastawa) {
+    case 1:
+         regulator = sprzerzenie->getPID_Kp();
+        break;
+    case 2:
+        regulator = sprzerzenie->getPID_Ti();
+    case 3:
+        regulator = sprzerzenie->getPID_Td();
+    case 4:
+        regulator = sprzerzenie->getPID();
+    default:
+        regulator = sprzerzenie->getPID();
+        break;
+    }
+    */
 
     seriaWartosciObliczonej->append(terazczas, newValue);
     seriaWartosciZadanej->append(terazczas, m_WartoscZadana);

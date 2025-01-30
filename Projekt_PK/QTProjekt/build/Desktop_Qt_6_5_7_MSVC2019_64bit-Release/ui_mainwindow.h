@@ -46,10 +46,11 @@ public:
     QLabel *nazwaZaklocenia;
     QSpinBox *wartoscZaklocenia;
     QHBoxLayout *horizontalLayout_9;
-    QLabel *label;
-    QSpinBox *spinBox;
+    QLabel *nazwaInterwal;
+    QSpinBox *wartoscIntewal;
     QGroupBox *wartosciRegulatoraPID;
     QGridLayout *gridLayout_2;
+    QVBoxLayout *verticalLayout_11;
     QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout;
     QLabel *NazwaKP;
@@ -84,13 +85,11 @@ public:
     QGroupBox *Przyciski;
     QGridLayout *gridLayout_4;
     QVBoxLayout *verticalLayout_7;
-    QHBoxLayout *horizontalLayout_13;
-    QPushButton *OkienkoZapiszPlik;
-    QPushButton *ZakonczProgram;
     QHBoxLayout *horizontalLayout_10;
     QPushButton *StartWykresom;
-    QPushButton *Reset;
     QPushButton *StopWykresom;
+    QHBoxLayout *horizontalLayout_13;
+    QPushButton *ZakonczProgram;
     QVBoxLayout *verticalLayout_2;
     QChartView *WykresWartosciZO;
     QHBoxLayout *horizontalLayout_8;
@@ -162,20 +161,20 @@ public:
 
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName("horizontalLayout_9");
-        label = new QLabel(wartosciWykresow);
-        label->setObjectName("label");
-        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        nazwaInterwal = new QLabel(wartosciWykresow);
+        nazwaInterwal->setObjectName("nazwaInterwal");
+        nazwaInterwal->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        horizontalLayout_9->addWidget(label);
+        horizontalLayout_9->addWidget(nazwaInterwal);
 
-        spinBox = new QSpinBox(wartosciWykresow);
-        spinBox->setObjectName("spinBox");
-        spinBox->setMinimum(100);
-        spinBox->setMaximum(1000);
-        spinBox->setValue(100);
-        spinBox->setDisplayIntegerBase(10);
+        wartoscIntewal = new QSpinBox(wartosciWykresow);
+        wartoscIntewal->setObjectName("wartoscIntewal");
+        wartoscIntewal->setMinimum(100);
+        wartoscIntewal->setMaximum(1000);
+        wartoscIntewal->setValue(100);
+        wartoscIntewal->setDisplayIntegerBase(10);
 
-        horizontalLayout_9->addWidget(spinBox);
+        horizontalLayout_9->addWidget(wartoscIntewal);
 
 
         verticalLayout_8->addLayout(horizontalLayout_9);
@@ -191,6 +190,8 @@ public:
         wartosciRegulatoraPID->setAlignment(Qt::AlignmentFlag::AlignCenter);
         gridLayout_2 = new QGridLayout(wartosciRegulatoraPID);
         gridLayout_2->setObjectName("gridLayout_2");
+        verticalLayout_11 = new QVBoxLayout();
+        verticalLayout_11->setObjectName("verticalLayout_11");
         verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setObjectName("verticalLayout_5");
         horizontalLayout = new QHBoxLayout();
@@ -251,7 +252,10 @@ public:
         verticalLayout_5->addLayout(horizontalLayout_3);
 
 
-        gridLayout_2->addLayout(verticalLayout_5, 0, 0, 1, 1);
+        verticalLayout_11->addLayout(verticalLayout_5);
+
+
+        gridLayout_2->addLayout(verticalLayout_11, 0, 0, 1, 1);
 
 
         verticalLayout_9->addWidget(wartosciRegulatoraPID);
@@ -384,21 +388,6 @@ public:
         gridLayout_4->setObjectName("gridLayout_4");
         verticalLayout_7 = new QVBoxLayout();
         verticalLayout_7->setObjectName("verticalLayout_7");
-        horizontalLayout_13 = new QHBoxLayout();
-        horizontalLayout_13->setObjectName("horizontalLayout_13");
-        OkienkoZapiszPlik = new QPushButton(Przyciski);
-        OkienkoZapiszPlik->setObjectName("OkienkoZapiszPlik");
-
-        horizontalLayout_13->addWidget(OkienkoZapiszPlik);
-
-        ZakonczProgram = new QPushButton(Przyciski);
-        ZakonczProgram->setObjectName("ZakonczProgram");
-
-        horizontalLayout_13->addWidget(ZakonczProgram);
-
-
-        verticalLayout_7->addLayout(horizontalLayout_13);
-
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName("horizontalLayout_10");
         horizontalLayout_10->setSizeConstraint(QLayout::SizeConstraint::SetFixedSize);
@@ -407,11 +396,6 @@ public:
 
         horizontalLayout_10->addWidget(StartWykresom);
 
-        Reset = new QPushButton(Przyciski);
-        Reset->setObjectName("Reset");
-
-        horizontalLayout_10->addWidget(Reset);
-
         StopWykresom = new QPushButton(Przyciski);
         StopWykresom->setObjectName("StopWykresom");
 
@@ -419,6 +403,16 @@ public:
 
 
         verticalLayout_7->addLayout(horizontalLayout_10);
+
+        horizontalLayout_13 = new QHBoxLayout();
+        horizontalLayout_13->setObjectName("horizontalLayout_13");
+        ZakonczProgram = new QPushButton(Przyciski);
+        ZakonczProgram->setObjectName("ZakonczProgram");
+
+        horizontalLayout_13->addWidget(ZakonczProgram);
+
+
+        verticalLayout_7->addLayout(horizontalLayout_13);
 
 
         gridLayout_4->addLayout(verticalLayout_7, 0, 0, 1, 1);
@@ -480,7 +474,7 @@ public:
         wartosciWykresow->setTitle(QCoreApplication::translate("MainWindow", "Wartosci wykres\303\263w", nullptr));
         NazwaWyniku->setText(QCoreApplication::translate("MainWindow", "Wartosc Zadana", nullptr));
         nazwaZaklocenia->setText(QCoreApplication::translate("MainWindow", "zaklozenie w %", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "interwa\305\202", nullptr));
+        nazwaInterwal->setText(QCoreApplication::translate("MainWindow", "interwa\305\202", nullptr));
         wartosciRegulatoraPID->setTitle(QCoreApplication::translate("MainWindow", "Regulator PID", nullptr));
         NazwaKP->setText(QCoreApplication::translate("MainWindow", "KP", nullptr));
         NazwaTI->setText(QCoreApplication::translate("MainWindow", "TI", nullptr));
@@ -492,12 +486,10 @@ public:
         sygnalSkokowy->setText(QCoreApplication::translate("MainWindow", "Skokowy", nullptr));
         sygnalSinuoidalny->setText(QCoreApplication::translate("MainWindow", "Sinusoidalny", nullptr));
         sygnalProstokatny->setText(QCoreApplication::translate("MainWindow", "Prostok\304\205tny", nullptr));
-        Przyciski->setTitle(QCoreApplication::translate("MainWindow", "Przyciski kontrolne", nullptr));
-        OkienkoZapiszPlik->setText(QCoreApplication::translate("MainWindow", "Zapis do pliku", nullptr));
-        ZakonczProgram->setText(QCoreApplication::translate("MainWindow", " Wyjd\305\272 z Programu", nullptr));
+        Przyciski->setTitle(QCoreApplication::translate("MainWindow", "Opcje kontrolne", nullptr));
         StartWykresom->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
-        Reset->setText(QCoreApplication::translate("MainWindow", "Reset", nullptr));
         StopWykresom->setText(QCoreApplication::translate("MainWindow", "Stop", nullptr));
+        ZakonczProgram->setText(QCoreApplication::translate("MainWindow", " Wyjd\305\272 z Programu", nullptr));
     } // retranslateUi
 
 };

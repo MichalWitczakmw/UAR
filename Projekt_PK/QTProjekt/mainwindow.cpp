@@ -84,24 +84,49 @@ void MainWindow::on_StartWykresom_clicked()
     a = {ui->wartoscA->value(), ui->wartoscA_1->value(), ui->wartoscA_2->value(), ui->wartoscA_3->value()};
     b = {ui->wartoscB->value(), ui->wartoscB_1->value(), ui->wartoscB_2->value(), ui->wartoscB_3->value()};
     wartoscZaklocenia = ui->wartoscZaklocenia->value();
+    wartoscInterwalu = ui->wartoscIntewal->value();
+/*
+    if(ui->nastawaP->isChecked())
+        jakanastawa = 1;
+    else if(ui->nastawaI->isChecked())
+        jakanastawa = 2;
+    else if(ui->nastawaD->isChecked())
+        jakanastawa = 3;
+    else if(ui->PID->isChecked())
+        jakanastawa = 4;
+*/
 
-    if(ui->sygnalProstokatny)
+    if(ui->sygnalProstokatny->isChecked())
         chceSygnal = JakiSygnal::Prostokatny;
-    if(ui->sygnalSinuoidalny)
+    else if(ui->sygnalSinuoidalny->isChecked())
         chceSygnal = JakiSygnal::Sinusoidalny;
-    if(ui->sygnalSkokowy)
+    else if(ui->sygnalSkokowy->isChecked())
         chceSygnal = JakiSygnal::Skokowy;
+
+    qDebug() << "Nowe wartości: "
+             << "wartoscZadana:" << wartoscZadana
+             << "Kp:" << Kp
+             << "Ti:" << Ti
+             << "Td:" << Td
+             << "a:" << &a
+             << "b:" << &b
+             << "wartoscZaklocenia:" << wartoscZaklocenia
+             << "wartoscInterwalu:" << wartoscInterwalu
+             << "chceSygnal:" << &chceSygnal;
 
     if (!wykresy)
     {
-        wykresy = new RobieWykres(a, b, Kp, Ti, Td,chceSygnal, wartoscZadana, wartoscZaklocenia, 100, this);
+        wykresy = new RobieWykres(a, b, Kp, Ti, Td,1, chceSygnal, wartoscZadana, wartoscZaklocenia, wartoscInterwalu, this);
         if (!wykresy) {
             qDebug() << "Błąd: nie można utworzyć RobieWykres!";
             return;
         }
     }
+    else
+    {
+        wykresy->setNoweWartosciWykresu(a, b, Kp, Ti, Td,1, chceSygnal, wartoscZadana, wartoscZaklocenia, wartoscInterwalu);
+    }
 
-    wykresy->setNoweWartosciWykresu(a, b, Kp, Ti, Td, JakiSygnal::Prostokatny, wartoscZadana, wartoscZaklocenia);
     wykresy->setTimerStop(false);
 
     aktualizujWartosciObliczonejLayout();
@@ -112,7 +137,37 @@ void MainWindow::on_StartWykresom_clicked()
 void MainWindow::on_Reset_clicked()
 {
     if (wykresy)
+    {
         wykresy->Resetuj();
+        wykresy->setTimerStop(true); // Zatrzymanie wykresu
+    }
+
+    // Resetowanie wartości w GUI
+    ui->wartoscWynik->setValue(0);
+    ui->wartoscKP->setValue(0);
+    ui->wartoscTI->setValue(0);
+    ui->wartoscTD->setValue(0);
+    ui->wartoscA->setValue(0);
+    ui->wartoscA_1->setValue(0.0);
+    ui->wartoscA_2->setValue(0.0);
+    ui->wartoscA_3->setValue(0.0);
+    ui->wartoscB->setValue(0);
+    ui->wartoscB_1->setValue(0.0);
+    ui->wartoscB_2->setValue(0.0);
+    ui->wartoscB_3->setValue(0.0);
+    ui->wartoscZaklocenia->setValue(0);
+    ui->wartoscIntewal->setValue(0);
+
+    // Resetowanie wartości w zmiennych
+    wartoscZadana = 0;
+    Kp = 0;
+    Ti = 0;
+    Td = 0;
+    a = {0, 0.0, 0.0, 0.0};
+    b = {0, 0.0, 0.0, 0.0};
+    wartoscZaklocenia = 0;
+    wartoscInterwalu = 0;
+    chceSygnal = JakiSygnal::Skokowy;
 }
 
 void MainWindow::on_StopWykresom_clicked()

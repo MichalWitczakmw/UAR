@@ -63,6 +63,9 @@ private:
     double wartoscZadana = 10;
     double wartoscZaklocenia = 1;
 
+    int wartoscInterwalu = 100;
+    int jakanastawa;
+
     JakiSygnal chceSygnal = JakiSygnal::Skokowy;
 
     bool niebylo= true;
