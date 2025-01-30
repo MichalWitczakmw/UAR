@@ -26,6 +26,10 @@ public:
     void aktualizujWartosciObliczonejLayout();
     void aktualizujUchybLayout();
     void aktualizujRegulatorLayout();
+
+    deque<double> pobierzWspolczynnikiA();
+    deque<double> pobierzWspolczynnikiB();
+
 private slots:
     void on_ZakonczProgram_clicked();
 
@@ -49,8 +53,8 @@ private:
 
     RobieWykres * wykresy = nullptr;
 
-    deque<double> a = {0.6};
-    deque<double> b = {0.4};
+    deque<double> a = {0.6, 0.0, 0.0, 0.0};
+    deque<double> b = {0.4, 0.0, 0.0, 0.0};
 
     double Kp =1;
     double Ti = 0.5;
@@ -58,6 +62,8 @@ private:
 
     double wartoscZadana = 10;
     double wartoscZaklocenia = 1;
+
+    JakiSygnal chceSygnal = JakiSygnal::Skokowy;
 
     bool niebylo= true;
 };

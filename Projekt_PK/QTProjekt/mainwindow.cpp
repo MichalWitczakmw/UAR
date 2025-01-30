@@ -6,6 +6,16 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    connect(ui->wartoscA, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
+    connect(ui->wartoscA_1, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
+    connect(ui->wartoscA_2, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
+    connect(ui->wartoscA_3, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
+
+    connect(ui->wartoscB, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
+    connect(ui->wartoscB_1, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
+    connect(ui->wartoscB_2, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
+    connect(ui->wartoscB_3, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
 }
 
 MainWindow::~MainWindow()
@@ -71,13 +81,20 @@ void MainWindow::on_StartWykresom_clicked()
     Kp = ui->wartoscKP->value();
     Ti = ui->wartoscTI->value();
     Td = ui->wartoscTD->value();
-    a = {ui->wartoscA->value()};
-    b = {ui->wartoscB->value()};
+    a = {ui->wartoscA->value(), ui->wartoscA_1->value(), ui->wartoscA_2->value(), ui->wartoscA_3->value()};
+    b = {ui->wartoscB->value(), ui->wartoscB_1->value(), ui->wartoscB_2->value(), ui->wartoscB_3->value()};
     wartoscZaklocenia = ui->wartoscZaklocenia->value();
+
+    if(ui->sygnalProstokatny)
+        chceSygnal = JakiSygnal::Prostokatny;
+    if(ui->sygnalSinuoidalny)
+        chceSygnal = JakiSygnal::Sinusoidalny;
+    if(ui->sygnalSkokowy)
+        chceSygnal = JakiSygnal::Skokowy;
 
     if (!wykresy)
     {
-        wykresy = new RobieWykres(a, b, Kp, Ti, Td, JakiSygnal::Prostokatny, wartoscZadana, wartoscZaklocenia, 100, this);
+        wykresy = new RobieWykres(a, b, Kp, Ti, Td,chceSygnal, wartoscZadana, wartoscZaklocenia, 100, this);
         if (!wykresy) {
             qDebug() << "Błąd: nie można utworzyć RobieWykres!";
             return;
