@@ -21,10 +21,13 @@ private:
 
 public:
     Sprzezenie(const deque<double>& Awspoczynniki, const deque<double>& Bwspoczynniki, int delay, double Kp,double Ti, double Td, JakiSygnal jakisygnal, double wZadana, double zaklocenieMax)
-        : Generator(), m_wartoscZadana(wZadana), model(Awspoczynniki, Bwspoczynniki, delay, (zaklocenieMax/100)*m_wartoscZadana), regulator({Kp,Ti,Td}), sygnal(jakisygnal) {
+        : Generator(), model(Awspoczynniki, Bwspoczynniki, delay, (zaklocenieMax/100)*m_wartoscZadana), regulator({Kp,Ti,Td}), sygnal(jakisygnal), m_wartoscZadana(wZadana) {
     }
 
     double Symuluj(int i);
+
+    //Sygnal
+    void setSygnal(JakiSygnal jks){sygnal=jks;}
 
     // ARX
     void setARX(int opuz,double zak)
@@ -45,7 +48,11 @@ public:
     double getPID_Kp() const {return regulator.getKp();}
     double getPID_Ti() const {return regulator.getTi();}
     double getPID_Td() const {return regulator.getTd();}
-    double getPID() const {return regulator.getPID();}
+    double getPID() const {return regulator.getPID()/m_wartoscZadana;}
+    void setPIDkp(double kp){regulator.setPIDKP(kp);}
+    void setPIDti(double ti){regulator.setPIDTI(ti);}
+    void setPIDtd(double td){regulator.setPIDTD(td);}
+    void setWZ(double wz){m_wartoscZadana =wz;}
 
     //sprzerzenie
     void setSprzerzenie(deque<double> a,deque<double> b,double Kp,double Ti, double Td,JakiSygnal rodzajSygnalu,double zadana,double wartosczaklocenia)

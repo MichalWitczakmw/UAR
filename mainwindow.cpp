@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->wartoscB_1, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
     connect(ui->wartoscB_2, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
     connect(ui->wartoscB_3, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
+
 }
 
 MainWindow::~MainWindow()
@@ -24,6 +25,7 @@ MainWindow::~MainWindow()
     if (wykresy != nullptr) {
         delete wykresy;
     }
+
 }
 
 void MainWindow::on_ZakonczProgram_clicked()
@@ -175,3 +177,66 @@ void MainWindow::on_StopWykresom_clicked()
     if (wykresy)
         wykresy->setTimerStop(true);
 }
+
+void MainWindow::on_wartoscKP_valueChanged(double kp)
+{
+    if(wykresy)
+        wykresy->setPIDkp(kp);
+}
+
+
+void MainWindow::on_wartoscTI_valueChanged(double ti)
+{
+    if(wykresy)
+        wykresy->setPIDkp(ti);
+}
+
+
+void MainWindow::on_wartoscTD_valueChanged(double td)
+{
+    if(wykresy)
+        wykresy->setPIDkp(td);
+}
+
+/*
+void MainWindow::on_sygnalSkokowy_cliked(bool checked)
+{
+    if(checked)
+        wykresy->setSygnal(JakiSygnal::Skokowy);
+}
+
+
+void MainWindow::on_sygnalSinuoidalny_cliked(bool checked)
+{
+    if(checked)
+        wykresy->setSygnal(JakiSygnal::Sinusoidalny);
+}
+
+
+void MainWindow::on_sygnalProstokatny_cliked(bool checked)
+{
+    if(checked)
+        wykresy->setSygnal(JakiSygnal::Prostokatny);
+}
+*/
+
+void MainWindow::on_wartoscWynik_valueChanged(double zadana)
+{
+    if(wykresy)
+        wykresy->setWartoscZadana(zadana);
+}
+
+
+void MainWindow::on_wartoscIntewal_valueChanged(int wi)
+{
+    if(wykresy)
+        wykresy->setInterwal(wi);
+}
+
+
+void MainWindow::on_wartoscZaklocenia_valueChanged(int zaklocenie)
+{
+    if(wykresy)
+        wykresy->setZaklocenie(zaklocenie);
+}
+

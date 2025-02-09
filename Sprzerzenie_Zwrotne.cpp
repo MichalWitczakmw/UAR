@@ -34,5 +34,5 @@ double Sprzezenie::Symuluj(int i)
    // cout << "Wejscie (z generatora): " << wejscie << " Sterowanie: " << sterowanie
    //     << " Wejscie do modelu: " << wejscieDoModelu << " Wyjscie (z ARX): " << aktualneWyjscie << "\n";
     czas +=i;
-    return aktualneWyjscie;
+    return aktualneWyjscie ;
 }

@@ -47,6 +47,9 @@
                </item>
                <item>
                 <widget class="QDoubleSpinBox" name="wartoscWynik">
+                 <property name="maximum">
+                  <double>10000.000000000000000</double>
+                 </property>
                  <property name="singleStep">
                   <double>0.010000000000000</double>
                  </property>
@@ -72,7 +75,7 @@
                <item>
                 <widget class="QSpinBox" name="wartoscZaklocenia">
                  <property name="minimum">
-                  <number>1</number>
+                  <number>0</number>
                  </property>
                  <property name="maximum">
                   <number>5</number>
@@ -245,6 +248,9 @@
                </item>
                <item>
                 <widget class="QDoubleSpinBox" name="wartoscA">
+                 <property name="minimum">
+                  <double>-99.000000000000000</double>
+                 </property>
                  <property name="singleStep">
                   <double>0.010000000000000</double>
                  </property>
@@ -255,6 +261,9 @@
                </item>
                <item>
                 <widget class="QDoubleSpinBox" name="wartoscA_1">
+                 <property name="minimum">
+                  <double>-99.000000000000000</double>
+                 </property>
                  <property name="singleStep">
                   <double>0.010000000000000</double>
                  </property>
@@ -265,6 +274,9 @@
                </item>
                <item>
                 <widget class="QDoubleSpinBox" name="wartoscA_2">
+                 <property name="minimum">
+                  <double>-99.000000000000000</double>
+                 </property>
                  <property name="singleStep">
                   <double>0.010000000000000</double>
                  </property>
@@ -275,6 +287,9 @@
                </item>
                <item>
                 <widget class="QDoubleSpinBox" name="wartoscA_3">
+                 <property name="minimum">
+                  <double>-99.000000000000000</double>
+                 </property>
                  <property name="singleStep">
                   <double>0.010000000000000</double>
                  </property>
@@ -299,6 +314,9 @@
                </item>
                <item>
                 <widget class="QDoubleSpinBox" name="wartoscB">
+                 <property name="minimum">
+                  <double>-99.000000000000000</double>
+                 </property>
                  <property name="singleStep">
                   <double>0.010000000000000</double>
                  </property>
@@ -309,6 +327,9 @@
                </item>
                <item>
                 <widget class="QDoubleSpinBox" name="wartoscB_1">
+                 <property name="minimum">
+                  <double>-99.000000000000000</double>
+                 </property>
                  <property name="singleStep">
                   <double>0.010000000000000</double>
                  </property>
@@ -319,6 +340,9 @@
                </item>
                <item>
                 <widget class="QDoubleSpinBox" name="wartoscB_2">
+                 <property name="minimum">
+                  <double>-99.000000000000000</double>
+                 </property>
                  <property name="singleStep">
                   <double>0.010000000000000</double>
                  </property>
@@ -329,6 +353,9 @@
                </item>
                <item>
                 <widget class="QDoubleSpinBox" name="wartoscB_3">
+                 <property name="minimum">
+                  <double>-99.000000000000000</double>
+                 </property>
                  <property name="singleStep">
                   <double>0.010000000000000</double>
                  </property>

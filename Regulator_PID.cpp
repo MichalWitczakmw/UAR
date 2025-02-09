@@ -7,8 +7,8 @@ double Regulator::ObliczSterowanie(double uchyb)
     double I = m_Ti * m_sumaUchybow;
     double D = m_Td * (uchyb - m_poprzedniUchyb);
     m_poprzedniUchyb = uchyb;
-
-    return P + I + D;
+    m_wartoscRegulowana = P + I + D;
+    return m_wartoscRegulowana;
 }
 
 void Regulator::ResetPamieci()

@@ -23,6 +23,13 @@ public:
     void Resetuj();
     void resetCzasu();
     void setInterwal(int warinterwal);
+    void setPIDkp(double kp){sprzerzenie->setPIDkp(kp);}
+    void setPIDti(double ti){sprzerzenie->setPIDti(ti);}
+    void setPIDtd(double td){sprzerzenie->setPIDtd(td);}
+    void setSygnal(JakiSygnal jks){sprzerzenie->setSygnal(jks);}
+    void setWartoscZadana(double wz){m_WartoscZadana = wz; sprzerzenie->setWZ(wz);}
+    void setZaklocenie(int z){sprzerzenie->setARX(1,z);}
+
 
 public slots:
     void aktualizacjawykresu();

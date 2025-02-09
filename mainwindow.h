@@ -41,6 +41,25 @@ private slots:
 
     void on_StopWykresom_clicked();
 
+    void on_wartoscKP_valueChanged(double kp);
+
+    void on_wartoscTI_valueChanged(double ti);
+
+    void on_wartoscTD_valueChanged(double td);
+/*
+    void on_sygnalSkokowy_cliked(bool checked);
+
+    void on_sygnalSinuoidalny_cliked(bool checked);
+
+    void on_sygnalProstokatny_cliked(bool checked);
+*/
+
+    void on_wartoscWynik_valueChanged(double zadana);
+
+    void on_wartoscIntewal_valueChanged(int wi);
+
+    void on_wartoscZaklocenia_valueChanged(int zaklocenie);
+
 private:
     Ui::MainWindow *ui;
 
@@ -69,5 +88,7 @@ private:
     JakiSygnal chceSygnal = JakiSygnal::Skokowy;
 
     bool niebylo= true;
+
+
 };
 #endif // MAINWINDOW_H

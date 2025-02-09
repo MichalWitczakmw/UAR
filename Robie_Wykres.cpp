@@ -81,10 +81,12 @@ QChartView* RobieWykres::getChartViewRegulatora() {
 
 void RobieWykres::setInterwal(int warinterwal)
 {
-    if(warinterwal>interwal && warinterwal<1000)
+    if(warinterwal>50 && warinterwal<1000)
         interwal=warinterwal;
     else
         interwal = 100;
+    timer->stop();
+    timer->start(interwal);
 }
 
 void RobieWykres::setNoweWartosciWykresu(std::deque<double> a, std::deque<double> b, double Kp, double Ti, double Td,int wnastawa, JakiSygnal rodzajSygnalu, double zadana, double wartosczaklocenia, int warinterwal)
@@ -172,19 +174,19 @@ void RobieWykres::inicjalizujWykres()
     chartWartosciObliczonej->addSeries(seriaWartosciObliczonej);
     chartWartosciObliczonej->addSeries(seriaWartosciZadanej);
     chartWartosciObliczonej->createDefaultAxes();
-    chartWartosciObliczonej->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
+    chartWartosciObliczonej->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana), (m_WartoscZadana * 2));
     chartWartosciObliczonej->axes(Qt::Horizontal).first()->setRange(0, 100);
     chartWartosciObliczonej->setTitle("Wykres Symulacji");
 
     chartUchybu->addSeries(seriaUchybu);
     chartUchybu->createDefaultAxes();
-    chartUchybu->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
+    chartUchybu->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana), (m_WartoscZadana * 2));
     chartUchybu->axes(Qt::Horizontal).first()->setRange(0, 100);
     chartUchybu->setTitle("Wykres Uchybu");
 
     chartRegulacji->addSeries(seriaPID);
     chartRegulacji->createDefaultAxes();
-    chartRegulacji->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana / 2), (m_WartoscZadana * 1.5));
+    chartRegulacji->axes(Qt::Vertical).first()->setRange(-(m_WartoscZadana), (m_WartoscZadana * 2));
     chartRegulacji->axes(Qt::Horizontal).first()->setRange(0, 100);
     chartRegulacji->setTitle("Wykres Regulatora");
 
@@ -231,6 +233,7 @@ void RobieWykres::aktualizacjawykresu()
     terazczas++;
     double newValue = sprzerzenie->Symuluj(terazczas);
     double uchyb = sprzerzenie->getuchyb();
+    double regulator = sprzerzenie->getPID();
     /*
     switch (nastawa) {
     case 1:

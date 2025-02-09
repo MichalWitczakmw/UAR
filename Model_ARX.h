@@ -9,6 +9,7 @@ private:
     random_device randomowo;
     mt19937 generuj;
     normal_distribution<double> dystrybucja;
+    double zak;
 
 public:
     LosoweZaklocenie() : generuj(randomowo()), dystrybucja(0, 0.1) {}
@@ -16,6 +17,11 @@ public:
     double operator()()
     {
         return dystrybucja(generuj);
+    }
+    double operator()(double z)
+    {
+        normal_distribution<double> dys(z,0.1);
+        return dys(generuj);
     }
 };
 
@@ -26,7 +32,7 @@ private:
     deque<double> m_Bwsopoczynniki;
     int m_opoznienie;
     LosoweZaklocenie f_zaklocenie;//f_ mieliśmy na myśli funktor
-    double m_maxZaklocenie = 1;
+    double m_maxZaklocenie = 0;
 
 public:
     ModelARX(const deque<double>& a, const deque<double>& b, int opznienie, double maxZaklocenie)
@@ -43,7 +49,7 @@ public:
     }
     void setZaklocenie(double zakloc)
     {
-        if(zakloc !=m_maxZaklocenie && zakloc<100 && zakloc >0.0)
+        //if(zakloc !=m_maxZaklocenie && zakloc<100 && zakloc >0.0)
             m_maxZaklocenie = zakloc;
 
     }
