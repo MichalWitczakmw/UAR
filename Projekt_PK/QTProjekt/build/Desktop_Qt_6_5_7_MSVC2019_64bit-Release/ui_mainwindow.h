@@ -88,6 +88,9 @@ public:
     QHBoxLayout *horizontalLayout_10;
     QPushButton *StartWykresom;
     QPushButton *StopWykresom;
+    QHBoxLayout *horizontalLayout_6;
+    QPushButton *ZapiszPrzycisk;
+    QPushButton *WycztajPrzycisk;
     QHBoxLayout *horizontalLayout_13;
     QPushButton *ZakonczProgram;
     QVBoxLayout *verticalLayout_2;
@@ -413,6 +416,21 @@ public:
 
         verticalLayout_7->addLayout(horizontalLayout_10);
 
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName("horizontalLayout_6");
+        ZapiszPrzycisk = new QPushButton(Przyciski);
+        ZapiszPrzycisk->setObjectName("ZapiszPrzycisk");
+
+        horizontalLayout_6->addWidget(ZapiszPrzycisk);
+
+        WycztajPrzycisk = new QPushButton(Przyciski);
+        WycztajPrzycisk->setObjectName("WycztajPrzycisk");
+
+        horizontalLayout_6->addWidget(WycztajPrzycisk);
+
+
+        verticalLayout_7->addLayout(horizontalLayout_6);
+
         horizontalLayout_13 = new QHBoxLayout();
         horizontalLayout_13->setObjectName("horizontalLayout_13");
         ZakonczProgram = new QPushButton(Przyciski);
@@ -498,6 +516,8 @@ public:
         Przyciski->setTitle(QCoreApplication::translate("MainWindow", "Opcje kontrolne", nullptr));
         StartWykresom->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
         StopWykresom->setText(QCoreApplication::translate("MainWindow", "Stop", nullptr));
+        ZapiszPrzycisk->setText(QCoreApplication::translate("MainWindow", "Zapis", nullptr));
+        WycztajPrzycisk->setText(QCoreApplication::translate("MainWindow", "Wczytaj", nullptr));
         ZakonczProgram->setText(QCoreApplication::translate("MainWindow", " Wyjd\305\272 z Programu", nullptr));
     } // retranslateUi
 

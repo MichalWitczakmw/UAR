@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "main_Okno_Zapisu.h"
+#include <QFileDialog>
+#include <QString>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
@@ -16,6 +18,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->wartoscB_1, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
     connect(ui->wartoscB_2, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
     connect(ui->wartoscB_3, SIGNAL(currentIndexChanged()), this, SLOT(aktualizujModel()));
+
+    connect(ui->sygnalSkokowy, SIGNAL(toggled(bool)), this, SLOT(on_sygnalSkokowy_toggled(bool)));
+    connect(ui->sygnalSinuoidalny, SIGNAL(toggled(bool)), this, SLOT(on_sygnalSinuoidalny_toggled(bool)));
+    connect(ui->sygnalProstokatny, SIGNAL(toggled(bool)), this, SLOT(on_sygnalProstokatny_toggled(bool)));
 
 }
 
@@ -198,7 +204,6 @@ void MainWindow::on_wartoscTD_valueChanged(double td)
         wykresy->setPIDkp(td);
 }
 
-/*
 void MainWindow::on_sygnalSkokowy_cliked(bool checked)
 {
     if(checked)
@@ -218,7 +223,6 @@ void MainWindow::on_sygnalProstokatny_cliked(bool checked)
     if(checked)
         wykresy->setSygnal(JakiSygnal::Prostokatny);
 }
-*/
 
 void MainWindow::on_wartoscWynik_valueChanged(double zadana)
 {
@@ -238,5 +242,51 @@ void MainWindow::on_wartoscZaklocenia_valueChanged(int zaklocenie)
 {
     if(wykresy)
         wykresy->setZaklocenie(zaklocenie);
+}
+
+
+void MainWindow::on_groupBox_clicked()
+{
+    connect(ui->wartoscA, SIGNAL(valueChanged(double)), this, SLOT(on_wartosc_valueChanged()));
+    connect(ui->wartoscA_1, SIGNAL(valueChanged(double)), this, SLOT(on_wartosc_valueChanged()));
+    connect(ui->wartoscA_2, SIGNAL(valueChanged(double)), this, SLOT(on_wartosc_valueChanged()));
+    connect(ui->wartoscA_3, SIGNAL(valueChanged(double)), this, SLOT(on_wartosc_valueChanged()));
+
+    connect(ui->wartoscB, SIGNAL(valueChanged(double)), this, SLOT(on_wartosc_valueChanged()));
+    connect(ui->wartoscB_1, SIGNAL(valueChanged(double)), this, SLOT(on_wartosc_valueChanged()));
+    connect(ui->wartoscB_2, SIGNAL(valueChanged(double)), this, SLOT(on_wartosc_valueChanged()));
+    connect(ui->wartoscB_3, SIGNAL(valueChanged(double)), this, SLOT(on_wartosc_valueChanged()));
+
+    // Pierwsza aktualizacja wartości
+    on_wartosc_valueChanged();
+}
+// Aktualizuje kolejki deque i propaguje je do dalszej części programu
+void MainWindow::on_wartosc_valueChanged()
+{
+    std::deque<double> a = {ui->wartoscA->value(), ui->wartoscA_1->value(),
+                            ui->wartoscA_2->value(), ui->wartoscA_3->value()};
+    std::deque<double> b = {ui->wartoscB->value(), ui->wartoscB_1->value(),
+                            ui->wartoscB_2->value(), ui->wartoscB_3->value()};
+
+    wykresy->setWSPAB(a, b);
+}
+
+
+void MainWindow::on_ZapiszPrzycisk_clicked()
+{
+    if (wykresy)
+        wykresy->setTimerStop(true);
+    QString nazwaPliku = QFileDialog::getOpenFileName(this,"Zapisz Plik","C://");
+    wykresy->zapiszDOPliku(nazwaPliku);
+}
+
+
+void MainWindow::on_WycztajPrzycisk_clicked()
+{
+    if (wykresy)
+        wykresy->setTimerStop(true);
+    QString nazwaPliku = QFileDialog::getOpenFileName(this,"Zapisz Plik","C://");
+    wykresy->zapiszDOPliku(nazwaPliku);
+
 }
 

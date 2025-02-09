@@ -35,6 +35,7 @@ public:
         model.setOpoznienei(opuz);
         model.setZaklocenie(zak);
     }
+    void setWspolczynAB(deque<double> a, deque<double> b){model.setWAB(a,b);}
     double getModelARX_zaklocenie() const {return model.getMaxZaklocenie();}
     double getModelARX_opuznienie() const {return model.getopoznienie();}
     deque<double> getModelARX_Awspolczynnik() const {return model.getAWspoczynnik();}
@@ -49,6 +50,7 @@ public:
     double getPID_Ti() const {return regulator.getTi();}
     double getPID_Td() const {return regulator.getTd();}
     double getPID() const {return regulator.getPID()/m_wartoscZadana;}
+    int getJakiSygnal() const {return (int)sygnal;}
     void setPIDkp(double kp){regulator.setPIDKP(kp);}
     void setPIDti(double ti){regulator.setPIDTI(ti);}
     void setPIDtd(double td){regulator.setPIDTD(td);}

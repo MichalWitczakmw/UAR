@@ -444,6 +444,24 @@
               </layout>
              </item>
              <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <item>
+                <widget class="QPushButton" name="ZapiszPrzycisk">
+                 <property name="text">
+                  <string>Zapis</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="WycztajPrzycisk">
+                 <property name="text">
+                  <string>Wczytaj</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
               <layout class="QHBoxLayout" name="horizontalLayout_13">
                <item>
                 <widget class="QPushButton" name="ZakonczProgram">

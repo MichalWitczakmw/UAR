@@ -16,23 +16,23 @@ double Sprzezenie::Symuluj(int i)
         wejscie = SygnalSkokowy(5, 1.0, czas);
     }
 
-    // Obliczenie uchybu na podstawie wartoœci zadanej i wyjœcia modelu
+    // Obliczenie uchybu na podstawie wartosci zadanej i wyjscia modelu
     double aktualneWyjscie = model.ObliczWyjscie(wejscia, wyjscia);
     m_uchyb = m_wartoscZadana - aktualneWyjscie;
 
     // Sterowanie na podstawie uchybu
     double sterowanie = regulator.ObliczSterowanie(m_uchyb);
 
-    // Modyfikacja wejœcia do modelu na podstawie sterowania
+    // Modyfikacja wejscia do modelu na podstawie sterowania
     double wejscieDoModelu = wejscie + sterowanie;
 
     // Aktualizacja modelu ARX
     model.AktualizujBufory(wejscia, wyjscia, wejscieDoModelu, aktualneWyjscie);
 
-    // Wyœwietlanie wyników
+    // Wyswietlanie wynikow
    // cout << "Czas: " << i << " s\n";
    // cout << "Wejscie (z generatora): " << wejscie << " Sterowanie: " << sterowanie
    //     << " Wejscie do modelu: " << wejscieDoModelu << " Wyjscie (z ARX): " << aktualneWyjscie << "\n";
     czas +=i;
-    return aktualneWyjscie ;
+    return aktualneWyjscie;
 }

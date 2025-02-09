@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <deque>
 #include "Sprzerzenie_Zwrotne.h"
+#include "Zapisze_Do_Pliku.h"
 
 class RobieWykres : public QWidget
 {
@@ -29,7 +30,11 @@ public:
     void setSygnal(JakiSygnal jks){sprzerzenie->setSygnal(jks);}
     void setWartoscZadana(double wz){m_WartoscZadana = wz; sprzerzenie->setWZ(wz);}
     void setZaklocenie(int z){sprzerzenie->setARX(1,z);}
+    void setWSPAB(deque<double>a,deque<double> b){sprzerzenie->setWspolczynAB(a,b);}
 
+
+    void zapiszDOPliku(QString sciezka);
+    void wczytajZPliku(QString sciezka);
 
 public slots:
     void aktualizacjawykresu();
@@ -53,6 +58,10 @@ private:
 
     QTimer *timer;
     Sprzezenie *sprzerzenie;
+
+    ZapiszeDoPliku * zapisuj;
+
+
     int interwal;
     double m_WartoscZadana;
     double regulator;

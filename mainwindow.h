@@ -46,19 +46,27 @@ private slots:
     void on_wartoscTI_valueChanged(double ti);
 
     void on_wartoscTD_valueChanged(double td);
-/*
+
     void on_sygnalSkokowy_cliked(bool checked);
 
     void on_sygnalSinuoidalny_cliked(bool checked);
 
     void on_sygnalProstokatny_cliked(bool checked);
-*/
+
 
     void on_wartoscWynik_valueChanged(double zadana);
 
     void on_wartoscIntewal_valueChanged(int wi);
 
     void on_wartoscZaklocenia_valueChanged(int zaklocenie);
+
+    void on_groupBox_clicked();
+
+    void on_wartosc_valueChanged();
+
+    void on_ZapiszPrzycisk_clicked();
+
+    void on_WycztajPrzycisk_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -71,6 +79,7 @@ private:
     QTimer *timer = nullptr;
 
     RobieWykres * wykresy = nullptr;
+
 
     deque<double> a = {0.6, 0.0, 0.0, 0.0};
     deque<double> b = {0.4, 0.0, 0.0, 0.0};

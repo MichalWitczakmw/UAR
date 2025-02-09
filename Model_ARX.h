@@ -2,6 +2,8 @@
 #define MODEL_ARX_H
 
 #include "Main_Projektu.h"
+#include "qdebug.h"
+#include "qglobal.h"
 
 class LosoweZaklocenie
 {
@@ -52,6 +54,24 @@ public:
         //if(zakloc !=m_maxZaklocenie && zakloc<100 && zakloc >0.0)
             m_maxZaklocenie = zakloc;
 
+    }
+    void setWAB(deque<double> a, deque<double> b)
+    {
+        m_Awsopoczynniki.clear();
+        m_Bwsopoczynniki.clear();
+        m_Awsopoczynniki = a;
+        m_Bwsopoczynniki = b;
+
+        // Debugowanie
+        qDebug() << "Aktualizacja współczynników A:";
+        for (double val : m_Awsopoczynniki) {
+            qDebug() << val;
+        }
+
+        qDebug() << "Aktualizacja współczynników B:";
+        for (double val : m_Bwsopoczynniki) {
+            qDebug() << val;
+        }
     }
 
     double getMaxZaklocenie() const{return m_maxZaklocenie;}

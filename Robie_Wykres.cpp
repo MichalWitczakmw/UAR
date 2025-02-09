@@ -65,6 +65,7 @@ RobieWykres::~RobieWykres()
     delete chartviewUchybu;
     delete chartviewRegulatora;
     delete timer;
+    delete zapisuj;
 }
 
 QChartView* RobieWykres::getChartViewWartosciObliczonej() {
@@ -302,3 +303,16 @@ void RobieWykres::addAxisTitle(QChart *chart, const QString &xTitle, const QStri
         yAxisTitle->setPos(chart->plotArea().left() - yAxisTitle->boundingRect().width() - 20, chart->plotArea().top() - yAxisTitle->boundingRect().height());
     }
 }
+
+void RobieWykres::zapiszDOPliku(QString sciezka)
+{
+    zapisuj->zapiszTekstowo(sprzerzenie->getPID_Kp(),sprzerzenie->getPID_Ti(),sprzerzenie->getPID_Ti()
+                            ,m_WartoscZadana,sprzerzenie->getModelARX_zaklocenie(),interwal,
+                            sprzerzenie->getModelARX_Awspolczynnik(),sprzerzenie->getModelARX_Bwspolczynnik(),sprzerzenie->getJakiSygnal(),sciezka);
+}
+
+
+
+
+
+
