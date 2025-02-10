@@ -7,6 +7,7 @@
 #include "Sprzerzenie_Zwrotne.h"
 #include "Zapisze_Do_Pliku.h"
 
+
 class RobieWykres : public QWidget
 {
     Q_OBJECT
@@ -33,11 +34,16 @@ public:
     void setWSPAB(deque<double>a,deque<double> b){sprzerzenie->setWspolczynAB(a,b);}
 
 
+
+
     void zapiszDOPliku(QString sciezka);
     void wczytajZPliku(QString sciezka);
 
 public slots:
     void aktualizacjawykresu();
+
+signals:
+    void daneWczytane(double KP, double TI, double TD, double WZ, double ZK, int I, std::deque<double> a, std::deque<double> b);
 
 private:
     void inicjalizujWykres();

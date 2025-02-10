@@ -1,7 +1,7 @@
-Wartosc zadana: 10
-Zaklocenie: 0
+Wartosc zadana: 1000
+Zaklocenie: 1
 Interwal: 100
 Jaki Sygnał: 0Nastawy regulatora PID:
-	Kp: 1	Ti: 0.6	Td: 0.6
+	Kp: 0.5	Ti: 0.6	Td: 0.6
 Wartości a: 0.6 0 0 0 
 Wartości b: 0.4 0 0 0 

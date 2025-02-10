@@ -23,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->sygnalSinuoidalny, SIGNAL(toggled(bool)), this, SLOT(on_sygnalSinuoidalny_toggled(bool)));
     connect(ui->sygnalProstokatny, SIGNAL(toggled(bool)), this, SLOT(on_sygnalProstokatny_toggled(bool)));
 
+    connect(wykresy, &RobieWykres::daneWczytane, this, &MainWindow::onDaneWczytane);
+
 }
 
 MainWindow::~MainWindow()
@@ -93,16 +95,6 @@ void MainWindow::on_StartWykresom_clicked()
     b = {ui->wartoscB->value(), ui->wartoscB_1->value(), ui->wartoscB_2->value(), ui->wartoscB_3->value()};
     wartoscZaklocenia = ui->wartoscZaklocenia->value();
     wartoscInterwalu = ui->wartoscIntewal->value();
-/*
-    if(ui->nastawaP->isChecked())
-        jakanastawa = 1;
-    else if(ui->nastawaI->isChecked())
-        jakanastawa = 2;
-    else if(ui->nastawaD->isChecked())
-        jakanastawa = 3;
-    else if(ui->PID->isChecked())
-        jakanastawa = 4;
-*/
 
     if(ui->sygnalProstokatny->isChecked())
         chceSygnal = JakiSygnal::Prostokatny;
@@ -285,8 +277,36 @@ void MainWindow::on_WycztajPrzycisk_clicked()
 {
     if (wykresy)
         wykresy->setTimerStop(true);
-    QString nazwaPliku = QFileDialog::getOpenFileName(this,"Zapisz Plik","C://");
-    wykresy->zapiszDOPliku(nazwaPliku);
 
+    QString nazwaPliku = QFileDialog::getOpenFileName(this, "Otwórz Plik", "C://");
+
+    if (!nazwaPliku.isEmpty()) {
+        qDebug() << "Plik wybrany do wczytania: " << nazwaPliku;
+        wykresy->wczytajZPliku(nazwaPliku);
+    } else {
+        qWarning() << "Nie wybrano pliku!";
+    }
+}
+
+void MainWindow::onDaneWczytane(double KP, double TI, double TD, double WZ, double ZK, int I, std::deque<double> a, std::deque<double> b)
+{
+    qDebug() << "Otrzymano sygnał daneWczytane! Aktualizacja UI...";
+
+    ui->wartoscA->setValue(a.size() > 0 ? a[0] : 0);
+    ui->wartoscA_1->setValue(a.size() > 1 ? a[1] : 0);
+    ui->wartoscA_2->setValue(a.size() > 2 ? a[2] : 0);
+    ui->wartoscA_3->setValue(a.size() > 3 ? a[3] : 0);
+
+    ui->wartoscB->setValue(b.size() > 0 ? b[0] : 0);
+    ui->wartoscB_1->setValue(b.size() > 1 ? b[1] : 0);
+    ui->wartoscB_2->setValue(b.size() > 2 ? b[2] : 0);
+    ui->wartoscB_3->setValue(b.size() > 3 ? b[3] : 0);
+
+    ui->wartoscIntewal->setValue(I);
+    ui->wartoscKP->setValue(KP);
+    ui->wartoscTI->setValue(TI);
+    ui->wartoscTD->setValue(TD);
+    ui->wartoscWynik->setValue(WZ);
+    ui->wartoscZaklocenia->setValue(ZK);
 }
 

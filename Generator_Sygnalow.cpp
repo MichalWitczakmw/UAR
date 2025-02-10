@@ -1,4 +1,5 @@
 #include "Generator_Sygnalow.h"
+#include <qdebug.h>
 
 double Generator::SygnalSkokowy(int aktywacja, double wartoscStala, int i)
 {
@@ -7,10 +8,15 @@ double Generator::SygnalSkokowy(int aktywacja, double wartoscStala, int i)
 
 double Generator::SygnalSinusoidalny(int okres, double amplituda, int i)
 {
-    return amplituda * sin((i % okres) * 2 * m_PI / okres);
+    double t = amplituda * sin((i* 2 * m_PI)/100 );
+    qDebug() <<t;
+
+    return t;
 }
 
 double Generator::SygnalProstokatny(int okres, double wypelnienie, double amplituda, int i)
 {
-    return ((i % okres) < wypelnienie * okres) ? amplituda : 0.0;
+    double t = ((i % okres) < wypelnienie * okres) ? amplituda : 0.0;
+    qDebug() <<t;
+    return t;
 }

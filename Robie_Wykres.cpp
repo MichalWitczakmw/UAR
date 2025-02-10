@@ -5,8 +5,6 @@ RobieWykres::RobieWykres(std::deque<double> a, std::deque<double> b, double Kp, 
 {
     sprzerzenie = new Sprzezenie(a, b, 1, Kp, Ti, Td, rodzajSygnalu, m_WartoscZadana, wartoscZaklocenia);
 
-    nastawa = wnastawa;
-
     seriaWartosciObliczonej = new QLineSeries();
     seriaWartosciZadanej = new QLineSeries();
     seriaUchybu = new QLineSeries();
@@ -15,26 +13,8 @@ RobieWykres::RobieWykres(std::deque<double> a, std::deque<double> b, double Kp, 
     seriaWartosciObliczonej->setName("Wartość Obliczona");
     seriaWartosciZadanej->setName("Wartość Zadana");
     seriaUchybu->setName("Uchyb");
-    /*
-    switch (nastawa) {
-    case 1:
-        seriaPID->setName("Nastawa P");
-        break;
-    case 2:
-        seriaPID->setName("Nastawa I");
-        break;
-    case 3:
-        seriaPID->setName("Nastawa D");
-        break;
-    case 4:
-        seriaPID->setName("Sterowanie PID");
-        break;
-    default:
-        seriaPID->setName("Sterowanie PID");
-        break;
-    }
-    */
     seriaPID->setName("Sterowanie PID");
+
     chartWartosciObliczonej = new QChart();
     chartUchybu = new QChart();
     chartRegulacji = new QChart();
@@ -235,22 +215,6 @@ void RobieWykres::aktualizacjawykresu()
     double newValue = sprzerzenie->Symuluj(terazczas);
     double uchyb = sprzerzenie->getuchyb();
     double regulator = sprzerzenie->getPID();
-    /*
-    switch (nastawa) {
-    case 1:
-         regulator = sprzerzenie->getPID_Kp();
-        break;
-    case 2:
-        regulator = sprzerzenie->getPID_Ti();
-    case 3:
-        regulator = sprzerzenie->getPID_Td();
-    case 4:
-        regulator = sprzerzenie->getPID();
-    default:
-        regulator = sprzerzenie->getPID();
-        break;
-    }
-    */
 
     seriaWartosciObliczonej->append(terazczas, newValue);
     seriaWartosciZadanej->append(terazczas, m_WartoscZadana);
@@ -311,8 +275,23 @@ void RobieWykres::zapiszDOPliku(QString sciezka)
                             sprzerzenie->getModelARX_Awspolczynnik(),sprzerzenie->getModelARX_Bwspolczynnik(),sprzerzenie->getJakiSygnal(),sciezka);
 }
 
+void RobieWykres::wczytajZPliku(QString sciezka)
+{
+    if (zapisuj) {
+        qDebug() << "Rozpoczęcie wczytywania pliku: " << sciezka;
 
+        double KP = 0, TI = 0, TD = 0, WZ = 0, ZK = 0;
+        int I = 0, jaki = 0;
+        std::deque<double> a, b;
 
+        zapisuj->wczytajTekstowo(KP, TI, TD, WZ, ZK, I, a, b, jaki, sciezka);
 
+        qDebug() << "Emitowanie sygnału daneWczytane...";
+        emit daneWczytane(KP, TI, TD, WZ, ZK, I, a, b);
 
+        setNoweWartosciWykresu(a,b,KP,TI,TD,1,(JakiSygnal)jaki,WZ,ZK,I);
 
+    } else {
+        qWarning() << "Brak wskaźnika zapisuj!";
+    }
+}

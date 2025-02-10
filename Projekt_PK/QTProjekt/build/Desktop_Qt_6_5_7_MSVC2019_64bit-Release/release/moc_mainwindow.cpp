@@ -89,11 +89,21 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "on_groupBox_clicked",
     "on_wartosc_valueChanged",
     "on_ZapiszPrzycisk_clicked",
-    "on_WycztajPrzycisk_clicked"
+    "on_WycztajPrzycisk_clicked",
+    "onDaneWczytane",
+    "KP",
+    "TI",
+    "TD",
+    "WZ",
+    "ZK",
+    "I",
+    "std::deque<double>",
+    "a",
+    "b"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[54];
+    uint offsetsAndSizes[74];
     char stringdata0[11];
     char stringdata1[26];
     char stringdata2[1];
@@ -121,6 +131,16 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata24[24];
     char stringdata25[26];
     char stringdata26[27];
+    char stringdata27[15];
+    char stringdata28[3];
+    char stringdata29[3];
+    char stringdata30[3];
+    char stringdata31[3];
+    char stringdata32[3];
+    char stringdata33[2];
+    char stringdata34[19];
+    char stringdata35[2];
+    char stringdata36[2];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -152,7 +172,17 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(423, 19),  // "on_groupBox_clicked"
         QT_MOC_LITERAL(443, 23),  // "on_wartosc_valueChanged"
         QT_MOC_LITERAL(467, 25),  // "on_ZapiszPrzycisk_clicked"
-        QT_MOC_LITERAL(493, 26)   // "on_WycztajPrzycisk_clicked"
+        QT_MOC_LITERAL(493, 26),  // "on_WycztajPrzycisk_clicked"
+        QT_MOC_LITERAL(520, 14),  // "onDaneWczytane"
+        QT_MOC_LITERAL(535, 2),  // "KP"
+        QT_MOC_LITERAL(538, 2),  // "TI"
+        QT_MOC_LITERAL(541, 2),  // "TD"
+        QT_MOC_LITERAL(544, 2),  // "WZ"
+        QT_MOC_LITERAL(547, 2),  // "ZK"
+        QT_MOC_LITERAL(550, 1),  // "I"
+        QT_MOC_LITERAL(552, 18),  // "std::deque<double>"
+        QT_MOC_LITERAL(571, 1),  // "a"
+        QT_MOC_LITERAL(573, 1)   // "b"
     },
     "MainWindow",
     "on_ZakonczProgram_clicked",
@@ -180,7 +210,17 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "on_groupBox_clicked",
     "on_wartosc_valueChanged",
     "on_ZapiszPrzycisk_clicked",
-    "on_WycztajPrzycisk_clicked"
+    "on_WycztajPrzycisk_clicked",
+    "onDaneWczytane",
+    "KP",
+    "TI",
+    "TD",
+    "WZ",
+    "ZK",
+    "I",
+    "std::deque<double>",
+    "a",
+    "b"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -192,7 +232,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      19,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -200,24 +240,25 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,  122,    2, 0x08,    1 /* Private */,
-       3,    0,  123,    2, 0x08,    2 /* Private */,
-       4,    0,  124,    2, 0x08,    3 /* Private */,
-       5,    0,  125,    2, 0x08,    4 /* Private */,
-       6,    0,  126,    2, 0x08,    5 /* Private */,
-       7,    1,  127,    2, 0x08,    6 /* Private */,
-       9,    1,  130,    2, 0x08,    8 /* Private */,
-      11,    1,  133,    2, 0x08,   10 /* Private */,
-      13,    1,  136,    2, 0x08,   12 /* Private */,
-      15,    1,  139,    2, 0x08,   14 /* Private */,
-      16,    1,  142,    2, 0x08,   16 /* Private */,
-      17,    1,  145,    2, 0x08,   18 /* Private */,
-      19,    1,  148,    2, 0x08,   20 /* Private */,
-      21,    1,  151,    2, 0x08,   22 /* Private */,
-      23,    0,  154,    2, 0x08,   24 /* Private */,
-      24,    0,  155,    2, 0x08,   25 /* Private */,
-      25,    0,  156,    2, 0x08,   26 /* Private */,
-      26,    0,  157,    2, 0x08,   27 /* Private */,
+       1,    0,  128,    2, 0x08,    1 /* Private */,
+       3,    0,  129,    2, 0x08,    2 /* Private */,
+       4,    0,  130,    2, 0x08,    3 /* Private */,
+       5,    0,  131,    2, 0x08,    4 /* Private */,
+       6,    0,  132,    2, 0x08,    5 /* Private */,
+       7,    1,  133,    2, 0x08,    6 /* Private */,
+       9,    1,  136,    2, 0x08,    8 /* Private */,
+      11,    1,  139,    2, 0x08,   10 /* Private */,
+      13,    1,  142,    2, 0x08,   12 /* Private */,
+      15,    1,  145,    2, 0x08,   14 /* Private */,
+      16,    1,  148,    2, 0x08,   16 /* Private */,
+      17,    1,  151,    2, 0x08,   18 /* Private */,
+      19,    1,  154,    2, 0x08,   20 /* Private */,
+      21,    1,  157,    2, 0x08,   22 /* Private */,
+      23,    0,  160,    2, 0x08,   24 /* Private */,
+      24,    0,  161,    2, 0x08,   25 /* Private */,
+      25,    0,  162,    2, 0x08,   26 /* Private */,
+      26,    0,  163,    2, 0x08,   27 /* Private */,
+      27,    8,  164,    2, 0x08,   28 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -238,6 +279,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Int, 0x80000000 | 34, 0x80000000 | 34,   28,   29,   30,   31,   32,   33,   35,   36,
 
        0        // eod
 };
@@ -295,7 +337,17 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'on_ZapiszPrzycisk_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_WycztajPrzycisk_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onDaneWczytane'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        QtPrivate::TypeAndForceComplete<double, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        QtPrivate::TypeAndForceComplete<std::deque<double>, std::false_type>,
+        QtPrivate::TypeAndForceComplete<std::deque<double>, std::false_type>
     >,
     nullptr
 } };
@@ -324,6 +376,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 15: _t->on_wartosc_valueChanged(); break;
         case 16: _t->on_ZapiszPrzycisk_clicked(); break;
         case 17: _t->on_WycztajPrzycisk_clicked(); break;
+        case 18: _t->onDaneWczytane((*reinterpret_cast< std::add_pointer_t<double>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[4])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[5])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[6])),(*reinterpret_cast< std::add_pointer_t<std::deque<double>>>(_a[7])),(*reinterpret_cast< std::add_pointer_t<std::deque<double>>>(_a[8]))); break;
         default: ;
         }
     }
@@ -348,13 +401,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 19;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 19)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 18;
+        _id -= 19;
     }
     return _id;
 }

@@ -29,6 +29,7 @@ public:
 
     deque<double> pobierzWspolczynnikiA();
     deque<double> pobierzWspolczynnikiB();
+    void aktualizujUI(double KP, double TI, double TD, double WZ, double ZK, int I, const std::deque<double> &a, const std::deque<double> &b);
 
 private slots:
     void on_ZakonczProgram_clicked();
@@ -67,6 +68,8 @@ private slots:
     void on_ZapiszPrzycisk_clicked();
 
     void on_WycztajPrzycisk_clicked();
+
+    void onDaneWczytane(double KP, double TI, double TD, double WZ, double ZK, int I, std::deque<double> a, std::deque<double> b);
 
 private:
     Ui::MainWindow *ui;

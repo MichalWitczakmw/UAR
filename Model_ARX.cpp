@@ -13,10 +13,10 @@ double ModelARX::ObliczWyjscie(const deque<double>& wejscia, const deque<double>
         if (i - 1 < wyjscia.size())
             y -= m_Awsopoczynniki[i] * wyjscia[wyjscia.size() - i];
     }
-    if(m_maxZaklocenie <1)
+    //if(m_maxZaklocenie <1)
         return y;
-    else
-        return y + f_zaklocenie(y*(m_maxZaklocenie/100));
+    //else
+        //return y + f_zaklocenie(y*(m_maxZaklocenie/100));
 }
 
 void ModelARX::AktualizujBufory(deque<double>& wejscia, deque<double>& wyjscia, double noweWejscie, double noweWyjscie)
